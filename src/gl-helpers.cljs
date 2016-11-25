@@ -1,6 +1,7 @@
 (ns gl-helpers.core
   (:require [cljs-webgl.constants.parameter-name :as parameter-name]))
 
+;; Not in the cljs-webgl "0.1.5-SNAPSHOT"
 (defn get-viewport
  "Returns the current viewport for a given `gl-context` as a map with the form:
  {:x,

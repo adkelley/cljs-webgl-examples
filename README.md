@@ -12,7 +12,7 @@ The program below can be run by first building:
 
     $ lein cljsbuild once
 
-And then opening the `examples/index.html` page in a webGL capable browser.
+And then opening the `resource/pubic/index.html` page in a webGL capable browser.
 
 
 To change to another example (e.g., triangle.cljs -> projection.cljs), update the
