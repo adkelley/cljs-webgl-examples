@@ -9,6 +9,7 @@
             [cljs-webgl.constants.capability :as capability]
             [cljs-webgl.buffers :as buffers]
             [cljs-webgl.typed-arrays :as ta]
+            [gl-helpers.core :as helpers]  ;; missing in cljs-webgl.context??
             [geometry.core :as geom]
             [mat4]))
 
@@ -90,9 +91,11 @@
         scale [2, 1, 1]
         ortho [10 10 10]
         fov 45
+        ; aspect-ratio (let [width 600 height 600]
+        ;                 (/ width height))
         aspect-ratio (let [{width :width,
                             height :height}
-                           (context/get-viewport gl)]
+                           (helpers/get-viewport gl)]
                         (/ width height))
         depth [0.1 100]]
 

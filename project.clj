@@ -13,8 +13,10 @@
               [{:id "dev"
                 :source-paths ["src"]
                 :incremental? true
-                :compiler {:output-to "resource/js/compiled/example.js"
-                           :source-map-timestamp: true
+                :compiler {:asset-path "js/compiled/out"
+                           :output-to "resources/public/js/compiled/example.js"
+                           :output-dir "resources/public/js/compiled/out"
+                           :source-map-timestamp true
                            :foreign-libs [{:file "resources/js/gl-matrix-min.js" :provides ["mat4","mat3","vec3"]}
                                           {:file "resources/js/webgl-utils.js" :provides ["WebGLUtils"]}]
                            :static-fns true
