@@ -1,10 +1,10 @@
 (ns geometry.core
   (:require [cljs-webgl.typed-arrays :as ta]))
 
-(defonce triangle
-  (ta/float32 [  0.0  1.0  0.0
-                -1.0 -1.0  0.0
-                 1.0 -1.0  0.0]))
+; (defonce triangle
+;   (ta/float32 [  0.0  1.0  0.0
+;                 -1.0 -1.0  0.0
+;                  1.0 -1.0  0.0]))
 
 (defonce square
   (ta/float32 [0.0 0.0 0.0

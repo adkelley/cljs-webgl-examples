@@ -10,7 +10,7 @@
             [cljs-webgl.buffers :as buffers]
             [cljs-webgl.typed-arrays :as ta]
             [gl-helpers.core :as helpers]  ;; missing in cljs-webgl.context??
-            [geometry.core :as geom]
+            [geometry.basic-shapes :refer [square]]
             [mat4]))
 
 (defn log [& args]
@@ -42,6 +42,9 @@
 
 (defonce vertex-color
  (ta/float32 [1.0 0.0 0.0 1.0
+              0.0 1.0 0.0 1.0
+              0.0 0.0 1.0 1.0
+              1.0 0.0 0.0 1.0
               0.0 1.0 0.0 1.0
               0.0 0.0 1.0 1.0]))
 
@@ -77,7 +80,7 @@
         shader (shaders/create-program gl
                  (shaders/create-shader gl shader/vertex-shader vertex-shader-source)
                  (shaders/create-shader gl shader/fragment-shader fragment-shader-source))
-        triangle-vertex-buffer (buffers/create-buffer gl geom/triangle
+        vertex-buffer (buffers/create-buffer gl square
                                              buffer-object/array-buffer
                                              buffer-object/static-draw
                                              3)
@@ -87,12 +90,10 @@
                                                    buffer-object/static-draw
                                                    4)
         translate [1, 0, -7]
-        rotate [45, 0, -45]
+        rotate [45, -45, 0]
         scale [2, 1, 1]
         ortho [10 10 10]
         fov 45
-        ; aspect-ratio (let [width 600 height 600]
-        ;                 (/ width height))
         aspect-ratio (let [{width :width,
                             height :height}
                            (helpers/get-viewport gl)]
@@ -105,12 +106,12 @@
      (buffers/clear-depth-buffer 1)
      (buffers/draw! :shader shader
                     :draw-mode draw-mode/triangles
-                    :count (.-numItems triangle-vertex-buffer)
+                    :count (.-numItems vertex-buffer)
                     :capabilities {capability/depth-test true}
                     :attributes
-                    [{:buffer triangle-vertex-buffer
+                    [{:buffer vertex-buffer
                       :location (shaders/get-attrib-location gl shader "a_position")
-                      :components-per-vertex (.-itemSize triangle-vertex-buffer)
+                      :components-per-vertex (.-itemSize vertex-buffer)
                       :type data-type/float}
 
                      {:buffer vertex-color-buffer

@@ -8,7 +8,7 @@
             [cljs-webgl.constants.shader :as shader]
             [cljs-webgl.buffers :as buffers]
             [cljs-webgl.typed-arrays :as ta]
-            [geometry.core :as geom]))
+            [geometry.basic-shapes :refer [triangle]]))
 
 
 (defonce randomColor
@@ -39,7 +39,7 @@
         shader (shaders/create-program gl
                  (shaders/create-shader gl shader/vertex-shader vertex-shader-source)
                  (shaders/create-shader gl shader/fragment-shader fragment-shader-source))
-        triangle-vertex-buffer (buffers/create-buffer gl geom/triangle
+        triangle-vertex-buffer (buffers/create-buffer gl triangle
                                              buffer-object/array-buffer
                                              buffer-object/static-draw
                                              3)]
