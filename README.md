@@ -10,19 +10,37 @@ Examples
 ----
 The program below can be run by first building:
 
-    $ lein cljsbuild once
+    $ lein cljsbuild once min
 
-And then opening the `resource/pubic/index.html` page in a webGL capable browser.
+And then opening the `resources/public/index.html` page in a webGL capable browser.
+
+Alternatively (and highly recommended), [Figwheel](https://github.com/bhauman/lein-figwheel) support has been added for a
+better, more interactive development experience:
+
+    $ lein figwheel
+
+then point your webGL capable browser to http://localhost:3449/index.html
 
 
-To change to another example (e.g., triangle.cljs -> projection.cljs), update the
-the script name in index.html accordingly
+To change to another example (e.g., triangle.cljs -> projection.cljs), update `src/examples/examples.cljs`
 
-```html
-<script type="text/javascript">
-    projection.core.start();
-</script>
-```
+### Development (Figwheel)
+
+  ```clojure
+  (defn on-js-reload []
+    (projection/start))
+  ```
+
+### Production (lein cljsbuild once min)
+Comment out:
+  ```clojure
+  (defn on-js-reload []
+    (triangle/start))  ;; change me (e.g., projection/start)!
+  ```
+and uncomment line *14*
+  ```clojure
+    (triangle/start))  ;; change me (e.g., projection/start)!
+  ```
 
 ### Sandbox Examples (WIP)
 1. **triangle.cljs**   - draw a triangle with a one-to-one mapping from model space to GL clip space
@@ -32,7 +50,6 @@ modifying lines *13* & *83*.  Be sure to change the number of vertex-colors to m
 
 Coming Soon
 ----
-* [Figwheel](https://github.com/bhauman/lein-figwheel) support
 * [Reagent](https://reagent-project.github.io/) support for interactive translation, rotation, and scaling
 
 Future
@@ -44,3 +61,9 @@ Foreign Libraries
 [glmatrix.js](http://glmatrix.net/)
 
 [webgl-utils](https://www.khronos.org/registry/webgl/sdk/demos/common/webgl-utils.js)
+
+## License
+
+Copyright © 2016 Alex Kelley
+
+Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.

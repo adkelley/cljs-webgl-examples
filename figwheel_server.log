@@ -1,0 +1,134 @@
+[0mCompiling "resources/public/js/compiled/example.js" from ["src"]...[0m
+[31mFailed to compile "resources/public/js/compiled/example.js" in 0.297 seconds.[0m
+[36m----  Could not Analyze    ----[0m
+
+  [1mNo such namespace: example.core, could not locate example/core.cljs, example/core.cljc, or Closure namespace "example.core"[0m
+
+[36m----  Analysis Error  ----[0m
+[0mCompiling "resources/public/js/compiled/example.js" from ["src"]...[0m
+[31mFailed to compile "resources/public/js/compiled/example.js" in 0.366 seconds.[0m
+[36m----  Could not Analyze    ----[0m
+
+  [1mNo such namespace: example.core, could not locate example/core.cljs, example/core.cljc, or Closure namespace "example.core"[0m
+
+[36m----  Analysis Error  ----[0m
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.307 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.27 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.308 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[31mFailed to compile "resources/public/js/compiled/examples.js" in 0.084 seconds.[0m
+[36m----  Could not Read  src/examples/examples.cljs   line:1  column:1  ----[0m
+
+  [1mEOF while reading, starting at line 1 and column 1[0m
+
+  [33m1[0m  [1m(ns examples.core[0m
+  [0m [0m  [33m^--- EOF while reading, starting at line 1 and column 1[0m
+  [36m2[0m  [36m  (:require [projection.core :as projection][0m
+  [36m3[0m  [36m            [triangle.core :as triangle])[0m
+
+[36m----  Reader Error : Please see src/examples/examples.cljs  ----[0m
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.289 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.358 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.247 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:13  column:4  ----[0m
+
+  [1mNo such namespace: trianlge, could not locate trianlge.cljs, trianlge.cljc, or Closure namespace ""[0m
+
+  [36m 9[0m  [36m; (defn start [][0m
+  [36m10[0m  [36m;   (projection/start))[0m
+  [36m11[0m  [36m[0m
+  [36m12[0m  [36m(defn on-js-reload [][0m
+  [33m13[0m  [1m  (trianlge/start))[0m
+  [0m  [0m  [33m   ^--- No such namespace: trianlge, could not locate trianlge.cljs, trianlge.cljc, or Closure namespace ""[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:13  column:4  ----[0m
+
+  [1mUse of undeclared Var trianlge/start[0m
+
+  [36m 9[0m  [36m; (defn start [][0m
+  [36m10[0m  [36m;   (projection/start))[0m
+  [36m11[0m  [36m[0m
+  [36m12[0m  [36m(defn on-js-reload [][0m
+  [33m13[0m  [1m  (trianlge/start))[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var trianlge/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.492 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.334 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.266 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.297 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.313 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.261 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.346 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.249 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.333 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.288 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.268 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.343 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.274 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.248 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
