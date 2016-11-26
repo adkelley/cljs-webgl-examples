@@ -5,10 +5,12 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.293"]
-                 [cljs-webgl "0.1.5-SNAPSHOT"]]
+                 [cljs-webgl "0.1.5-SNAPSHOT"]
+                 [reagent "0.6.0"]]
   :source-paths ["src/cljs"]
   :plugins [[lein-figwheel "0.5.8"]
             [lein-cljsbuild "1.1.4" :exclusions [[org.clojure/clojure]]]]
+
 
   :clean-targets ^{:protect false} ["resources/public/js/compiled" "target"]
 

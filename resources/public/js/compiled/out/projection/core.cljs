@@ -74,7 +74,7 @@
 
 
 
-(defn start []
+(defn start [tx ty tz]
   (let [canvas      (.getElementById js/document "canvas")
         gl          (context/get-context (.getElementById js/document "canvas"))
         shader (shaders/create-program gl
@@ -89,7 +89,7 @@
                                                    buffer-object/array-buffer
                                                    buffer-object/static-draw
                                                    4)
-        translate [1, 0, -7]
+        translate [tx, ty, tz]
         rotate [45, -45, 0]
         scale [2, 1, 1]
         ortho [10 10 10]

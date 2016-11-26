@@ -16,14 +16,14 @@ goog.require('mat4');
 goog.require('cljs_webgl.constants.draw_mode');
 projection.core.log = (function projection$core$log(var_args){
 var args__26003__auto__ = [];
-var len__25996__auto___34667 = arguments.length;
-var i__25997__auto___34668 = (0);
+var len__25996__auto___45317 = arguments.length;
+var i__25997__auto___45318 = (0);
 while(true){
-if((i__25997__auto___34668 < len__25996__auto___34667)){
-args__26003__auto__.push((arguments[i__25997__auto___34668]));
+if((i__25997__auto___45318 < len__25996__auto___45317)){
+args__26003__auto__.push((arguments[i__25997__auto___45318]));
 
-var G__34669 = (i__25997__auto___34668 + (1));
-i__25997__auto___34668 = G__34669;
+var G__45319 = (i__25997__auto___45318 + (1));
+i__25997__auto___45318 = G__45319;
 continue;
 } else {
 }
@@ -40,8 +40,8 @@ return console.log.apply(console,cljs.core.to_array.call(null,args));
 
 projection.core.log.cljs$lang$maxFixedArity = (0);
 
-projection.core.log.cljs$lang$applyTo = (function (seq34666){
-return projection.core.log.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq34666));
+projection.core.log.cljs$lang$applyTo = (function (seq45316){
+return projection.core.log.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq45316));
 });
 
 projection.core.vertex_shader_source = "attribute vec4 a_position;\n   attribute vec4 a_color;\n   uniform mat4 u_pMatrix;\n   uniform mat4 u_mvMatrix;\n   varying vec4 v_color;\n\n   void main() {\n     gl_Position = u_pMatrix * u_mvMatrix * a_position;\n     v_color = a_color;\n   }";
@@ -74,25 +74,25 @@ mat4.rotateZ.call(null,m,m,projection.core.deg__GT_rad.call(null,cljs.core.nth.c
 
 return mat4.scale.call(null,m,m,cljs.core.clj__GT_js.call(null,s));
 });
-projection.core.start = (function projection$core$start(){
+projection.core.start = (function projection$core$start(tx,ty,tz){
 var canvas = document.getElementById("canvas");
 var gl = cljs_webgl.context.get_context.call(null,document.getElementById("canvas"));
 var shader = cljs_webgl.shaders.create_program.call(null,gl,cljs_webgl.shaders.create_shader.call(null,gl,cljs_webgl.constants.shader.vertex_shader,projection.core.vertex_shader_source),cljs_webgl.shaders.create_shader.call(null,gl,cljs_webgl.constants.shader.fragment_shader,projection.core.fragment_shader_source));
 var vertex_buffer = cljs_webgl.buffers.create_buffer.call(null,gl,geometry.basic_shapes.square,cljs_webgl.constants.buffer_object.array_buffer,cljs_webgl.constants.buffer_object.static_draw,(3));
 var vertex_color_buffer = cljs_webgl.buffers.create_buffer.call(null,gl,projection.core.vertex_color,cljs_webgl.constants.buffer_object.array_buffer,cljs_webgl.constants.buffer_object.static_draw,(4));
-var translate = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(1),(0),(-7)], null);
+var translate = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [tx,ty,tz], null);
 var rotate = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(45),(-45),(0)], null);
 var scale = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(2),(1),(1)], null);
 var ortho = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [(10),(10),(10)], null);
 var fov = (45);
-var aspect_ratio = (function (){var map__34672 = gl_helpers.core.get_viewport.call(null,gl);
-var map__34672__$1 = ((((!((map__34672 == null)))?((((map__34672.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__34672.cljs$core$ISeq$)))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__34672):map__34672);
-var width = cljs.core.get.call(null,map__34672__$1,new cljs.core.Keyword(null,"width","width",-384071477));
-var height = cljs.core.get.call(null,map__34672__$1,new cljs.core.Keyword(null,"height","height",1025178622));
+var aspect_ratio = (function (){var map__45322 = gl_helpers.core.get_viewport.call(null,gl);
+var map__45322__$1 = ((((!((map__45322 == null)))?((((map__45322.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__45322.cljs$core$ISeq$)))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__45322):map__45322);
+var width = cljs.core.get.call(null,map__45322__$1,new cljs.core.Keyword(null,"width","width",-384071477));
+var height = cljs.core.get.call(null,map__45322__$1,new cljs.core.Keyword(null,"height","height",1025178622));
 return (width / height);
 })();
 var depth = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [0.1,(100)], null);
 return cljs_webgl.buffers.draw_BANG_.call(null,cljs_webgl.buffers.clear_depth_buffer.call(null,cljs_webgl.buffers.clear_color_buffer.call(null,gl,0.2,0.2,0.2,(1)),(1)),new cljs.core.Keyword(null,"shader","shader",1492833021),shader,new cljs.core.Keyword(null,"draw-mode","draw-mode",-1830018794),cljs_webgl.constants.draw_mode.triangles,new cljs.core.Keyword(null,"count","count",2139924085),vertex_buffer.numItems,new cljs.core.Keyword(null,"capabilities","capabilities",212739361),cljs.core.PersistentArrayMap.fromArray([cljs_webgl.constants.capability.depth_test,true], true, false),new cljs.core.Keyword(null,"attributes","attributes",-74013604),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"buffer","buffer",617295198),vertex_buffer,new cljs.core.Keyword(null,"location","location",1815599388),cljs_webgl.shaders.get_attrib_location.call(null,gl,shader,"a_position"),new cljs.core.Keyword(null,"components-per-vertex","components-per-vertex",426723635),vertex_buffer.itemSize,new cljs.core.Keyword(null,"type","type",1174270348),cljs_webgl.constants.data_type.float$], null),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"buffer","buffer",617295198),vertex_color_buffer,new cljs.core.Keyword(null,"location","location",1815599388),cljs_webgl.shaders.get_attrib_location.call(null,gl,shader,"a_color"),new cljs.core.Keyword(null,"components-per-vertex","components-per-vertex",426723635),vertex_color_buffer.itemSize,new cljs.core.Keyword(null,"type","type",1174270348),cljs_webgl.constants.data_type.float$], null)], null),new cljs.core.Keyword(null,"uniforms","uniforms",-782808153),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"name","name",1843675177),"u_pMatrix",new cljs.core.Keyword(null,"type","type",1174270348),new cljs.core.Keyword(null,"mat4","mat4",-237531594),new cljs.core.Keyword(null,"values","values",372645556),projection.core.perspective_projection_matrix.call(null,fov,aspect_ratio,depth)], null),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"name","name",1843675177),"u_mvMatrix",new cljs.core.Keyword(null,"type","type",1174270348),new cljs.core.Keyword(null,"mat4","mat4",-237531594),new cljs.core.Keyword(null,"values","values",372645556),projection.core.model_view_matrix.call(null,translate,rotate,scale)], null)], null));
 });
 
-//# sourceMappingURL=core.js.map?rel=1480181643879
+//# sourceMappingURL=core.js.map?rel=1480195233269

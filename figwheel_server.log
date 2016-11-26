@@ -243,3 +243,568 @@ notifying browser that file changed:  out/examples/core.js
 [32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.322 seconds.[0m
 notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
 notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.335 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:11  column:4  ----[0m
+
+  [1mNo such namespace: perspective, could not locate perspective.cljs, perspective.cljc, or Closure namespace ""[0m
+
+  [36m 7[0m  [36m(println "Rendering Example: projection.cljs")[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m;; uncomment lines 10-11 when using Figwheel (see Readme)[0m
+  [36m10[0m  [36m(defn on-js-reload [][0m
+  [33m11[0m  [1m  (perspective/start))   ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m   ^--- No such namespace: perspective, could not locate perspective.cljs, perspective.cljc, or Closure namespace ""[0m
+  [36m12[0m  [36m[0m
+  [36m13[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [36m14[0m  [36m; (triangle/start)  ;; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:11  column:4  ----[0m
+
+  [1mUse of undeclared Var perspective/start[0m
+
+  [36m 7[0m  [36m(println "Rendering Example: projection.cljs")[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m;; uncomment lines 10-11 when using Figwheel (see Readme)[0m
+  [36m10[0m  [36m(defn on-js-reload [][0m
+  [33m11[0m  [1m  (perspective/start))   ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var perspective/start[0m
+  [36m12[0m  [36m[0m
+  [36m13[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [36m14[0m  [36m; (triangle/start)  ;; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.563 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.277 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.336 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[31mFailed to compile "resources/public/js/compiled/examples.js" in 0.193 seconds.[0m
+[36m----  Could not Analyze  src/examples/examples.cljs  ----[0m
+
+  [1mNo such namespace: reagent.core, could not locate reagent/core.cljs, reagent/core.cljc, or Closure namespace "reagent.core" [0m
+
+[36m----  Analysis Error : Please see src/examples/examples.cljs  ----[0m
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.327 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+  [36m24[0m  [36m                   (:ty @app-state)]);; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.402 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+  [36m24[0m  [36m                   (:ty @app-state)]);; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.454 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+  [36m24[0m  [36m                   (:ty @app-state)]);; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.448 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+  [36m24[0m  [36m                   (:ty @app-state)]);; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.345 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+  [36m24[0m  [36m                   (:ty @app-state)]);; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.423 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx :ty @app-state)]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.389 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state)]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.331 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state) (:ty @app-state)]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.391 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx, :ty @app-state)]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.325 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state, :ty @app-state)]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:20  ----[0m
+
+  [1mWrong number of args (3) passed to :tx[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state, :ty @app-state)]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m                   ^--- Wrong number of args (3) passed to :tx[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.393 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state), (:ty @app-state)]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.32 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state) (:ty @app-state)]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.345 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [@app-state]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.381 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state) -2]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.345 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to triangle.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(triangle/start [(:tx @app-state) -2]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to triangle.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.379 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:2  ----[0m
+
+  [1mNo such namespace: perspective, could not locate perspective.cljs, perspective.cljc, or Closure namespace ""[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(perspective/start [(:tx @app-state) -2]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m ^--- No such namespace: perspective, could not locate perspective.cljs, perspective.cljc, or Closure namespace ""[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:2  ----[0m
+
+  [1mUse of undeclared Var perspective/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(perspective/start [(:tx @app-state) -2]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m ^--- Use of undeclared Var perspective/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.478 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [(:tx @app-state) -2]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.368 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:23  column:1  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m19[0m  [36m; (defn on-js-reload [][0m
+  [36m20[0m  [36m;   (triangle/start))   ;; change me!! (e.g., projection/start)[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [33m23[0m  [1m(projection/start [2 2]) ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m^--- Wrong number of args (1) passed to projection.core/start[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.362 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:20  column:3  ----[0m
+
+  [1mWrong number of args (1) passed to triangle.core/start[0m
+
+  [36m16[0m  [36m                          (. js/document (getElementById "app")))[0m
+  [36m17[0m  [36m[0m
+  [36m18[0m  [36m; uncomment lines 10-11 when using Figwheel (see Readme)[0m
+  [36m19[0m  [36m(defn on-js-reload [][0m
+  [33m20[0m  [1m  (triangle/start [2 2]))   ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m  ^--- Wrong number of args (1) passed to triangle.core/start[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [36m23[0m  [36m; (projection/start [2 2]) ;; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.316 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:20  column:3  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m16[0m  [36m                          (. js/document (getElementById "app")))[0m
+  [36m17[0m  [36m[0m
+  [36m18[0m  [36m; uncomment lines 10-11 when using Figwheel (see Readme)[0m
+  [36m19[0m  [36m(defn on-js-reload [][0m
+  [33m20[0m  [1m  (projection/start [2 2]))   ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m  ^--- Wrong number of args (1) passed to projection.core/start[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [36m23[0m  [36m; (projection/start [2 2]) ;; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.475 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:20  column:3  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m16[0m  [36m                          (. js/document (getElementById "app")))[0m
+  [36m17[0m  [36m[0m
+  [36m18[0m  [36m; uncomment lines 10-11 when using Figwheel (see Readme)[0m
+  [36m19[0m  [36m(defn on-js-reload [][0m
+  [33m20[0m  [1m  (projection/start [2, 2]))   ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m  ^--- Wrong number of args (1) passed to projection.core/start[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [36m23[0m  [36m; (projection/start [2 2]) ;; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.361 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.319 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.282 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.293 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:20  column:3  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m16[0m  [36m                          (. js/document (getElementById "app")))[0m
+  [36m17[0m  [36m[0m
+  [36m18[0m  [36m; uncomment lines 10-11 when using Figwheel (see Readme)[0m
+  [36m19[0m  [36m(defn on-js-reload [][0m
+  [33m20[0m  [1m  (projection/start [-2]))   ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m  ^--- Wrong number of args (1) passed to projection.core/start[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [36m23[0m  [36m; (projection/start [2 2]) ;; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.416 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:20  column:3  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m16[0m  [36m                          (. js/document (getElementById "app")))[0m
+  [36m17[0m  [36m[0m
+  [36m18[0m  [36m; uncomment lines 10-11 when using Figwheel (see Readme)[0m
+  [36m19[0m  [36m(defn on-js-reload [][0m
+  [33m20[0m  [1m  (projection/start [-2 -1]))   ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m  ^--- Wrong number of args (1) passed to projection.core/start[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [36m23[0m  [36m; (projection/start [2 2]) ;; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.332 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:20  column:3  ----[0m
+
+  [1mWrong number of args (1) passed to projection.core/start[0m
+
+  [36m16[0m  [36m                          (. js/document (getElementById "app")))[0m
+  [36m17[0m  [36m[0m
+  [36m18[0m  [36m; uncomment lines 10-11 when using Figwheel (see Readme)[0m
+  [36m19[0m  [36m(defn on-js-reload [][0m
+  [33m20[0m  [1m  (projection/start [-2 (-1)]))   ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m  ^--- Wrong number of args (1) passed to projection.core/start[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [36m23[0m  [36m; (projection/start [2 2]) ;; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.354 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.325 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.376 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.345 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[31mFailed to compile "resources/public/js/compiled/examples.js" in 0.202 seconds.[0m
+[36m----  Could not Read  src/examples/examples.cljs   line:10  column:45  ----[0m
+
+  [1mMap literal must contain an even number of forms[0m
+
+  [36m 8[0m  [36m(println "Rendering Example: projection.cljs")[0m
+  [36m 9[0m  [36m[0m
+  [33m10[0m  [1m(defonce app-state (atom {:tx -1 :ty -1 :tz}))[0m
+  [0m  [0m  [33m                                            ^--- Map literal must contain an even number of forms[0m
+  [36m11[0m  [36m[0m
+  [36m12[0m  [36m(defn control-panel [][0m
+  [36m13[0m  [36m  [:h1 "Translate: " (:tx @app-state) ", " (:ty @app-state)])[0m
+
+[36m----  Reader Error : Please see src/examples/examples.cljs  ----[0m
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[36m----  Compiler Warning on   src/examples/examples.cljs   line:20  column:3  ----[0m
+
+  [1mWrong number of args (3) passed to projection.core/start[0m
+
+  [36m16[0m  [36m                          (. js/document (getElementById "app")))[0m
+  [36m17[0m  [36m[0m
+  [36m18[0m  [36m; uncomment lines 10-11 when using Figwheel (see Readme)[0m
+  [36m19[0m  [36m(defn on-js-reload [][0m
+  [33m20[0m  [1m  (projection/start (:tx @app-state) (:ty @app-state) (:tz @app-state)))   ;; change me!! (e.g., projection/start)[0m
+  [0m  [0m  [33m  ^--- Wrong number of args (3) passed to projection.core/start[0m
+  [36m21[0m  [36m[0m
+  [36m22[0m  [36m;; comment out line 14 when using Figwheel (see Readme)[0m
+  [36m23[0m  [36m; (projection/start [2 2]) ;; change me!! (e.g., projection/start)[0m
+
+[36m----  Compiler Warning : Please see src/examples/examples.cljs  ----[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.437 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.356 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.4 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.299 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.335 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
