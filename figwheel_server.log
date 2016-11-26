@@ -132,3 +132,114 @@ notifying browser that file changed:  out/examples/core.js
 [32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.248 seconds.[0m
 notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
 notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.264 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.281 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.348 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.313 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.325 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.354 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.404 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.318 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.316 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.282 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.391 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.347 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.26 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.351 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.233 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.23 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.281 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.263 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.235 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.32 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.27 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.259 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.324 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.368 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.363 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/projection/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.269 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.322 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
