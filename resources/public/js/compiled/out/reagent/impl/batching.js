@@ -48,14 +48,14 @@ var n__25806__auto__ = a.length;
 var i = (0);
 while(true){
 if((i < n__25806__auto__)){
-var c_36581 = (a[i]);
-if((c_36581["cljsIsDirty"]) === true){
-(c_36581["forceUpdate"])();
+var c_26304 = (a[i]);
+if((c_26304["cljsIsDirty"]) === true){
+(c_26304["forceUpdate"])();
 } else {
 }
 
-var G__36582 = (i + (1));
-i = G__36582;
+var G__26305 = (i + (1));
+i = G__26305;
 continue;
 } else {
 return null;
@@ -93,8 +93,8 @@ while(true){
 if((i < n__25806__auto__)){
 (fs[i]).call(null);
 
-var G__36583 = (i + (1));
-i = G__36583;
+var G__26306 = (i + (1));
+i = G__26306;
 continue;
 } else {
 return null;
@@ -139,13 +139,13 @@ this$.run_funs("beforeFlush");
 
 reagent.impl.batching.ratom_flush.call(null);
 
-var temp__4661__auto___36584 = (this$["componentQueue"]);
-if((temp__4661__auto___36584 == null)){
+var temp__4661__auto___26307 = (this$["componentQueue"]);
+if((temp__4661__auto___26307 == null)){
 } else {
-var cs_36585 = temp__4661__auto___36584;
+var cs_26308 = temp__4661__auto___26307;
 (this$["componentQueue"] = null);
 
-reagent.impl.batching.run_queue.call(null,cs_36585);
+reagent.impl.batching.run_queue.call(null,cs_26308);
 }
 
 return this$.flush_after_render();
@@ -241,4 +241,4 @@ return null;
 }
 });
 
-//# sourceMappingURL=batching.js.map?rel=1480194642677
+//# sourceMappingURL=batching.js.map?rel=1480258607498

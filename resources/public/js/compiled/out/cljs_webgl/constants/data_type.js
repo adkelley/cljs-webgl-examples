@@ -9,4 +9,4 @@ cljs_webgl.constants.data_type.int$ = (5124);
 cljs_webgl.constants.data_type.unsigned_int = (5125);
 cljs_webgl.constants.data_type.float$ = (5126);
 
-//# sourceMappingURL=data_type.js.map?rel=1480194643528
+//# sourceMappingURL=data_type.js.map?rel=1480258608596

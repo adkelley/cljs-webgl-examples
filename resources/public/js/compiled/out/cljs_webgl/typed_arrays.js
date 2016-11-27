@@ -63,4 +63,4 @@ var value_type = cljs.core.type.call(null,value);
 return (cljs.core._EQ_.call(null,value_type,Int8Array)) || (cljs.core._EQ_.call(null,value_type,Uint8Array)) || (cljs.core._EQ_.call(null,value_type,Uint8ClampedArray)) || (cljs.core._EQ_.call(null,value_type,Int16Array)) || (cljs.core._EQ_.call(null,value_type,Uint16Array)) || (cljs.core._EQ_.call(null,value_type,Int32Array)) || (cljs.core._EQ_.call(null,value_type,Uint32Array)) || (cljs.core._EQ_.call(null,value_type,Float32Array)) || (cljs.core._EQ_.call(null,value_type,Float64Array));
 });
 
-//# sourceMappingURL=typed_arrays.js.map?rel=1480194643607
+//# sourceMappingURL=typed_arrays.js.map?rel=1480258608736

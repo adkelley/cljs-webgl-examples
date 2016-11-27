@@ -11,4 +11,4 @@ if(typeof geometry.basic_shapes.square !== 'undefined'){
 geometry.basic_shapes.square = cljs_webgl.typed_arrays.float32.call(null,new cljs.core.PersistentVector(null, 18, 5, cljs.core.PersistentVector.EMPTY_NODE, [-1.0,-1.0,0.0,1.0,-1.0,0.0,-1.0,1.0,0.0,-1.0,1.0,0.0,1.0,-1.0,0.0,1.0,1.0,0.0], null));
 }
 
-//# sourceMappingURL=basic_shapes.js.map?rel=1480194643759
+//# sourceMappingURL=basic_shapes.js.map?rel=1480258608948

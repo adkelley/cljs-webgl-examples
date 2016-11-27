@@ -17,4 +17,4 @@ cljs_webgl.constants.uniform_type.float_mat4 = (35676);
 cljs_webgl.constants.uniform_type.sampler_2d = (35678);
 cljs_webgl.constants.uniform_type.sampler_cube = (35680);
 
-//# sourceMappingURL=uniform_type.js.map?rel=1480194643767
+//# sourceMappingURL=uniform_type.js.map?rel=1480258608963

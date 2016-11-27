@@ -1,0 +1,76 @@
+ #flex-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  max-width: 70vw;
+  margin-left: 2rem;
+}
+
+#canvas {
+  flex: 1 1 auto;
+  order: -1;
+  max-height: 400px;
+  max-width: 400px;
+}
+
+#transform-panel {
+  flex: 1 1 auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  border: 1px solid grey;
+}
+
+#translate-panel {
+  flex: 1 1 auto;
+  padding: 0.5rem;
+  flex-flow: column nowrap;
+  /*border: 1px dashed green;*/
+}
+#tx {
+  flex: 1 1 auto;
+}
+#ty {
+  flex: 1 1 auto;
+}
+#tz {
+  flex: 1 1 auto;
+}
+
+#rotate-panel {
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
+  padding: 0.5rem;
+  /*border: 1px dashed green;*/
+}
+#rx {
+  flex: 1 1 auto;
+}
+#ry {
+  flex: 1 1 auto;
+}
+#rz {
+  flex: 1 1 auto;
+}
+
+#scale-panel {
+  flex: 1 1 auto;
+  flex-flow: column nowrap;
+  padding: 0.5rem;
+  /*border: 1px dashed green;*/
+}
+#sx {
+  flex: 1 1 auto;
+}
+#sy {
+  flex: 1 1 auto;
+}
+#sz {
+  flex: 1 1 auto;
+}
+
+
+.slider {
+  flex: 1 1 auto;
+  width: 70%;
+}

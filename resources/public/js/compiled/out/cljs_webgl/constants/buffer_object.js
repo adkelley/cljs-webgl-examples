@@ -12,4 +12,4 @@ cljs_webgl.constants.buffer_object.buffer_size = (34660);
 cljs_webgl.constants.buffer_object.buffer_usage = (34661);
 cljs_webgl.constants.buffer_object.current_vertex_attrib = (34342);
 
-//# sourceMappingURL=buffer_object.js.map?rel=1480194642605
+//# sourceMappingURL=buffer_object.js.map?rel=1480258607297

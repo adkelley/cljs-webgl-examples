@@ -157,10 +157,10 @@ while(true){
 if((child == null)){
 return text;
 } else {
-var G__36936 = child.nextSibling;
-var G__36937 = [cljs.core.str(text),cljs.core.str(((cljs.core._EQ_.call(null,child.nodeType,(3)))?child.textContent:null))].join('');
-child = G__36936;
-text = G__36937;
+var G__26692 = child.nextSibling;
+var G__26693 = [cljs.core.str(text),cljs.core.str(((cljs.core._EQ_.call(null,child.nodeType,(3)))?child.textContent:null))].join('');
+child = G__26692;
+text = G__26693;
 continue;
 }
 break;
@@ -195,14 +195,14 @@ return null;
  */
 cljs_webgl.shaders.create_program = (function cljs_webgl$shaders$create_program(var_args){
 var args__26003__auto__ = [];
-var len__25996__auto___36944 = arguments.length;
-var i__25997__auto___36945 = (0);
+var len__25996__auto___26700 = arguments.length;
+var i__25997__auto___26701 = (0);
 while(true){
-if((i__25997__auto___36945 < len__25996__auto___36944)){
-args__26003__auto__.push((arguments[i__25997__auto___36945]));
+if((i__25997__auto___26701 < len__25996__auto___26700)){
+args__26003__auto__.push((arguments[i__25997__auto___26701]));
 
-var G__36946 = (i__25997__auto___36945 + (1));
-i__25997__auto___36945 = G__36946;
+var G__26702 = (i__25997__auto___26701 + (1));
+i__25997__auto___26701 = G__26702;
 continue;
 } else {
 }
@@ -215,51 +215,51 @@ return cljs_webgl.shaders.create_program.cljs$core$IFn$_invoke$arity$variadic((a
 
 cljs_webgl.shaders.create_program.cljs$core$IFn$_invoke$arity$variadic = (function (gl_context,shaders){
 var program = gl_context.createProgram();
-var seq__36940_36947 = cljs.core.seq.call(null,shaders);
-var chunk__36941_36948 = null;
-var count__36942_36949 = (0);
-var i__36943_36950 = (0);
+var seq__26696_26703 = cljs.core.seq.call(null,shaders);
+var chunk__26697_26704 = null;
+var count__26698_26705 = (0);
+var i__26699_26706 = (0);
 while(true){
-if((i__36943_36950 < count__36942_36949)){
-var shader_36951 = cljs.core._nth.call(null,chunk__36941_36948,i__36943_36950);
-gl_context.attachShader(program,shader_36951);
+if((i__26699_26706 < count__26698_26705)){
+var shader_26707 = cljs.core._nth.call(null,chunk__26697_26704,i__26699_26706);
+gl_context.attachShader(program,shader_26707);
 
-var G__36952 = seq__36940_36947;
-var G__36953 = chunk__36941_36948;
-var G__36954 = count__36942_36949;
-var G__36955 = (i__36943_36950 + (1));
-seq__36940_36947 = G__36952;
-chunk__36941_36948 = G__36953;
-count__36942_36949 = G__36954;
-i__36943_36950 = G__36955;
+var G__26708 = seq__26696_26703;
+var G__26709 = chunk__26697_26704;
+var G__26710 = count__26698_26705;
+var G__26711 = (i__26699_26706 + (1));
+seq__26696_26703 = G__26708;
+chunk__26697_26704 = G__26709;
+count__26698_26705 = G__26710;
+i__26699_26706 = G__26711;
 continue;
 } else {
-var temp__4657__auto___36956 = cljs.core.seq.call(null,seq__36940_36947);
-if(temp__4657__auto___36956){
-var seq__36940_36957__$1 = temp__4657__auto___36956;
-if(cljs.core.chunked_seq_QMARK_.call(null,seq__36940_36957__$1)){
-var c__25702__auto___36958 = cljs.core.chunk_first.call(null,seq__36940_36957__$1);
-var G__36959 = cljs.core.chunk_rest.call(null,seq__36940_36957__$1);
-var G__36960 = c__25702__auto___36958;
-var G__36961 = cljs.core.count.call(null,c__25702__auto___36958);
-var G__36962 = (0);
-seq__36940_36947 = G__36959;
-chunk__36941_36948 = G__36960;
-count__36942_36949 = G__36961;
-i__36943_36950 = G__36962;
+var temp__4657__auto___26712 = cljs.core.seq.call(null,seq__26696_26703);
+if(temp__4657__auto___26712){
+var seq__26696_26713__$1 = temp__4657__auto___26712;
+if(cljs.core.chunked_seq_QMARK_.call(null,seq__26696_26713__$1)){
+var c__25702__auto___26714 = cljs.core.chunk_first.call(null,seq__26696_26713__$1);
+var G__26715 = cljs.core.chunk_rest.call(null,seq__26696_26713__$1);
+var G__26716 = c__25702__auto___26714;
+var G__26717 = cljs.core.count.call(null,c__25702__auto___26714);
+var G__26718 = (0);
+seq__26696_26703 = G__26715;
+chunk__26697_26704 = G__26716;
+count__26698_26705 = G__26717;
+i__26699_26706 = G__26718;
 continue;
 } else {
-var shader_36963 = cljs.core.first.call(null,seq__36940_36957__$1);
-gl_context.attachShader(program,shader_36963);
+var shader_26719 = cljs.core.first.call(null,seq__26696_26713__$1);
+gl_context.attachShader(program,shader_26719);
 
-var G__36964 = cljs.core.next.call(null,seq__36940_36957__$1);
-var G__36965 = null;
-var G__36966 = (0);
-var G__36967 = (0);
-seq__36940_36947 = G__36964;
-chunk__36941_36948 = G__36965;
-count__36942_36949 = G__36966;
-i__36943_36950 = G__36967;
+var G__26720 = cljs.core.next.call(null,seq__26696_26713__$1);
+var G__26721 = null;
+var G__26722 = (0);
+var G__26723 = (0);
+seq__26696_26703 = G__26720;
+chunk__26697_26704 = G__26721;
+count__26698_26705 = G__26722;
+i__26699_26706 = G__26723;
 continue;
 }
 } else {
@@ -282,11 +282,11 @@ return program;
 
 cljs_webgl.shaders.create_program.cljs$lang$maxFixedArity = (1);
 
-cljs_webgl.shaders.create_program.cljs$lang$applyTo = (function (seq36938){
-var G__36939 = cljs.core.first.call(null,seq36938);
-var seq36938__$1 = cljs.core.next.call(null,seq36938);
-return cljs_webgl.shaders.create_program.cljs$core$IFn$_invoke$arity$variadic(G__36939,seq36938__$1);
+cljs_webgl.shaders.create_program.cljs$lang$applyTo = (function (seq26694){
+var G__26695 = cljs.core.first.call(null,seq26694);
+var seq26694__$1 = cljs.core.next.call(null,seq26694);
+return cljs_webgl.shaders.create_program.cljs$core$IFn$_invoke$arity$variadic(G__26695,seq26694__$1);
 });
 
 
-//# sourceMappingURL=shaders.js.map?rel=1480194643584
+//# sourceMappingURL=shaders.js.map?rel=1480258608694
