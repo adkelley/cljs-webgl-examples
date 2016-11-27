@@ -3,6 +3,13 @@
 /classes
 /checkouts
 /out
+out/
+resources/public/js/compiled
+resources/public/js/out
+resources/public/js/example.js
+resources/public/js/prod
+figwheel_server_log.txt
+figwheel_server.log
 pom.xml
 pom.xml.asc
 *.jar
