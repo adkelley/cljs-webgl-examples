@@ -808,3 +808,27 @@ notifying browser that file changed:  out/examples/core.js
 [32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.335 seconds.[0m
 notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
 notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[31mFailed to compile "resources/public/js/compiled/examples.js" in 0.361 seconds.[0m
+[36m----  Could not Analyze  src/examples/examples.cljs   line:73  column:1  ----[0m
+
+  [1mlet requires an even number of forms in binding vector[0m
+
+  [36m71[0m  [36m    [scale-panel]])[0m
+  [36m72[0m  [36m[0m
+  [33m73[0m  [1m(let [{:keys [tx ty tz[0m
+  [0m  [0m  [33m^--- let requires an even number of forms in binding vector[0m
+  [36m74[0m  [36m                rx ry rz[0m
+  [36m75[0m  [36m                sx sy sz @transform]}][0m
+  [36m76[0m  [36m  (projection/start tx ty tz[0m
+
+[36m----  Analysis Error : Please see src/examples/examples.cljs  ----[0m
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.37 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/goog/deps.js
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js
+[0mCompiling "resources/public/js/compiled/examples.js" from ["src"]...[0m
+[32mSuccessfully compiled "resources/public/js/compiled/examples.js" in 0.526 seconds.[0m
+notifying browser that file changed:  resources/public/js/compiled/out/cljs_deps.js
+notifying browser that file changed:  out/examples/core.js

@@ -14,7 +14,7 @@ The program below can be run by first building:
 
 And then opening the `resources/public/index.html` page in a webGL capable browser.
 
-Alternatively (and highly recommended), [Figwheel](https://github.com/bhauman/lein-figwheel) support has been added for a
+Alternatively (when you're developing your own examples), [Figwheel](https://github.com/bhauman/lein-figwheel) support has been added for a
 better, more interactive development experience:
 
     $ lein figwheel
@@ -22,25 +22,7 @@ better, more interactive development experience:
 then point your webGL capable browser to http://localhost:3449/index.html
 
 
-To change to another example (e.g., triangle.cljs -> projection.cljs), update `src/examples/examples.cljs`
-
-### Development (Figwheel)
-
-  ```clojure
-  (defn on-js-reload []
-    (projection/start))
-  ```
-
-### Production (lein cljsbuild once min)
-Comment out:
-  ```clojure
-  (defn on-js-reload []
-    (triangle/start))  ;; change me (e.g., projection/start)!
-  ```
-and uncomment line *14*
-  ```clojure
-    (triangle/start))  ;; change me (e.g., projection/start)!
-  ```
+To change to another example (e.g., triangle.cljs -> projection.cljs), update lines *22* & *76* in `src/examples/examples.cljs`
 
 ### Sandbox Examples (WIP)
 1. **triangle.cljs**   - draw a triangle with a one-to-one mapping from model space to GL clip space
@@ -48,16 +30,17 @@ and uncomment line *14*
 Modify translation, rotation, scaling by changing the vector values on lines *89-97*.  Choose another shape (e.g., triangle, F-Shape) by
 modifying lines *13* & *83*.  Be sure to change the number of vertex-colors to match the shape.
 
-Coming Soon
-----
-* [Reagent](https://reagent-project.github.io/) support for interactive translation, rotation, and scaling
-
 Future
 ----
-Fork cljs-webgl and port it to [WebGL2](https://www.khronos.org/registry/webgl/specs/latest/2.0/)
+* Fork cljs-webgl and port it to [WebGL2](https://www.khronos.org/registry/webgl/specs/latest/2.0/)
+* UI support for selecting examples
+
+Plugins
+----
+UI - [Reagent](https://reagent-project.github.io/)
 
 Foreign Libraries
----
+----
 [glmatrix.js](http://glmatrix.net/)
 
 [webgl-utils](https://www.khronos.org/registry/webgl/sdk/demos/common/webgl-utils.js)

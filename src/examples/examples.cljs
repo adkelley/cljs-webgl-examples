@@ -22,7 +22,6 @@
                              (projection/start tx ty tz rx ry rz sx sy sz)))}]])
 
 
-
 (defn scale-panel []
    (let [{:keys [sx sy sz]} @transform]
      [:div {:id "scale-panel"}
@@ -43,13 +42,13 @@
       [:h3 "Translation"]
       [:div {:id "tx"}
        "X: " (int tx)
-       [slider :tx tx -10 10]]
+       [slider :tx tx -50 50]]
       [:div {:id "ty"}
        "Y: " (int ty)
-       [slider :ty ty -10 10]]
+       [slider :ty ty -50 50]]
       [:div {:id "tz"}
        "Z: " (int tz)
-       [slider :tz tz -10 10]]]))
+       [slider :tz tz -100 -0.1]]]))
 
 (defn rotate-panel []
    (let [{:keys [rx ry rz]} @transform]
@@ -57,13 +56,13 @@
        [:h3 "Rotation"]
        [:div {:id "rx"}
         "X: " (int rx)
-        [slider :rx rx -90 90]]
+        [slider :rx rx 0 359]]
        [:div {:id "ry"}
         "Y: " (int ry)
-        [slider :ry ry -90 90]]
+        [slider :ry ry 0 359]]
        [:div {:id "rz"}
         "Z: " (int rz)
-        [slider :rz rz -90 90]]]))
+        [slider :rz rz 0 359]]]))
 
 (defn transform-panel []
   [:div {:id "transform-panel"}
@@ -71,36 +70,15 @@
     [rotate-panel]
     [scale-panel]])
 
-(r/render
-    [transform-panel]
-    (. js/document (getElementById "app")))
-
 (let [{:keys [tx ty tz
               rx ry rz
               sx sy sz]} @transform]
   (projection/start tx ty tz
                     rx ry rz
-                    sx sy sz))
-
-; uncomment lines 10-11 when using Figwheel (see Readme)
-; (defn on-js-reload []
-;   (let [{:keys [tx ty tz]} @translate]
-;     (projection/start :tx :ty :tz)))   ;; change me!! (e.g., projection/start)
-
-;; comment out lines 14-15 when using Figwheel (see Readme)
-;; change (e.g., projection/start -> triangle/start)
-; (let [{:keys [tx ty tz]} @translate
-;       {:keys [rx ry rz]} @rotate
-;       {:keys [sx sy sz]} @scale]
-;   (projection/start tx ty tz
-;                     rx ry rz
-;                     sz sy sz))
+                    sx sy sz)
+  (r/render
+    [transform-panel]
+    (. js/document (getElementById "app"))))
 
 
-; (defonce app-state (atom {:text "Hello world!"}))
-;
-; (defn hello-world []
-;   [:h1 (:text @app-state)])
-;
-; (r/render-component [hello-world]
-;                           (. js/document (getElementById "app")))
+(defn on-js-reload [])
