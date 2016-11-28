@@ -10,22 +10,15 @@
             [cljs-webgl.buffers :as buffers]
             [cljs-webgl.typed-arrays :as ta]
             [gl-helpers.core :as helpers]  ;; missing in cljs-webgl.context??
-            [geometry.basic-shapes :refer [square]]
+            [geometry.basic-shapes :refer [square square-color]]
+            [shader-source.core :refer [vertex-shader-source
+                                        fragment-shader-source]]
             [mat4]))
 
-(defn log [& args]
-  (.apply js/console.log js/console (to-array args)))
+(enable-console-print!)
 
 (defn deg->rad [degrees]
  (/ (* degrees Math/PI) 180))
-
-(defonce vertex-color
- (ta/float32 [1.0 0.0 0.0 1.0
-              0.0 1.0 0.0 1.0
-              0.0 0.0 1.0 1.0
-              0.0 0.0 1.0 1.0
-              0.0 1.0 0.0 1.0
-              1.0 1.0 1.0 1.0]))
 
 
 (defn ortho-projection-matrix
@@ -51,27 +44,6 @@
     (mat4/rotateZ m m (deg->rad (nth r 2)))
     (mat4/scale m m (clj->js s))))
 
-(defonce vertex-shader-source
-  "attribute vec4 a_position;
-   attribute vec4 a_color;
-   uniform mat4 u_pMatrix;
-   uniform mat4 u_mvMatrix;
-   varying vec4 v_color;
-
-   void main() {
-     gl_Position = u_pMatrix * u_mvMatrix * a_position;
-     v_color = a_color;
-   }")
-
-(defonce fragment-shader-source
-  "precision mediump float;
-   uniform vec4 u_color;
-   varying vec4 v_color;
-
-   void main() {
-     gl_FragColor = v_color;
-   }")
-
 (defonce canvas (.getElementById js/document "canvas"))
 (defonce gl (context/get-context (.getElementById js/document "canvas")))
 (defonce shader (shaders/create-program gl
@@ -82,7 +54,7 @@
                                      buffer-object/static-draw
                                      3))
 (defonce vertex-color-buffer (buffers/create-buffer gl
-                                           vertex-color
+                                           square-color
                                            buffer-object/array-buffer
                                            buffer-object/static-draw
                                            4))
@@ -93,7 +65,6 @@
                             (helpers/get-viewport gl)]
                           (/ width height)))
 (defonce depth [0.1 100])
-
 
 (defn draw [translate
             rotate
