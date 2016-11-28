@@ -19,7 +19,7 @@
                           (let [{:keys [tx ty tz
                                         sx sy sz
                                         rx ry rz]} @transform]
-                             (projection/start tx ty tz rx ry rz sx sy sz)))}]])
+                             (projection/start [tx ty tz] [rx ry rz] [sx sy sz])))}]])
 
 
 (defn scale-panel []
@@ -73,9 +73,9 @@
 (let [{:keys [tx ty tz
               rx ry rz
               sx sy sz]} @transform]
-  (projection/start tx ty tz
-                    rx ry rz
-                    sx sy sz)
+  (projection/start [tx ty tz]
+                    [rx ry rz]
+                    [sx sy sz])
   (r/render
     [transform-panel]
     (. js/document (getElementById "app"))))

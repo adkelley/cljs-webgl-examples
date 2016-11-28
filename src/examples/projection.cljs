@@ -74,9 +74,9 @@
 
 
 
-(defn start [tx ty tz
-             rx ry rz
-             sx sy sz]
+(defn start [translate
+             rotate
+             scale]
   (let [canvas      (.getElementById js/document "canvas")
         gl          (context/get-context (.getElementById js/document "canvas"))
         shader (shaders/create-program gl
@@ -91,9 +91,7 @@
                                                    buffer-object/array-buffer
                                                    buffer-object/static-draw
                                                    4)
-        translate [tx, ty, tz]
-        rotate [rx, ry, rz]
-        scale [sx, sy, sz]
+    
         ortho [10 10 10]
         fov 45
         aspect-ratio (let [{width :width,
