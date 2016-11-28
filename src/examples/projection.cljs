@@ -96,8 +96,8 @@
 
 
 (defn draw [translate
-             rotate
-             scale]
+            rotate
+            scale]
 
     (-> gl
      (buffers/clear-color-buffer 0.2 0.2 0.2 1)

@@ -27,8 +27,8 @@ To change to another example (e.g., triangle.cljs -> projection.cljs), update li
 ### Sandbox Examples (WIP)
 1. **triangle.cljs**   - draw a triangle with a one-to-one mapping from model space to GL clip space
 2. **projection.cljs** - draw a square by transforming [ModelViewProjectionMatrix] X (Square Vertices). Default is a perspective projection.  Choose an orthographic projection by uncommenting line *119* and commenting out line *121*.
-Modify translation, rotation, scaling by changing the vector values on lines *89-97*.  Choose another shape (e.g., triangle, F-Shape) by
-modifying lines *13* & *83*.  Be sure to change the number of vertex-colors to match the shape.
+Choose another shape (e.g., triangle, F-Shape) by modifying lines *13* & *83*.  Be sure to change the number of
+vertex-colors to match the shape.
 
 Future
 ----
