@@ -16,27 +16,6 @@
 (defn log [& args]
   (.apply js/console.log js/console (to-array args)))
 
-(def vertex-shader-source
-  "attribute vec4 a_position;
-   attribute vec4 a_color;
-   uniform mat4 u_pMatrix;
-   uniform mat4 u_mvMatrix;
-   varying vec4 v_color;
-
-   void main() {
-     gl_Position = u_pMatrix * u_mvMatrix * a_position;
-     v_color = a_color;
-   }")
-
-(def fragment-shader-source
-  "precision mediump float;
-   uniform vec4 u_color;
-   varying vec4 v_color;
-
-   void main() {
-     gl_FragColor = v_color;
-   }")
-
 (defn deg->rad [degrees]
  (/ (* degrees Math/PI) 180))
 
@@ -72,34 +51,53 @@
     (mat4/rotateZ m m (deg->rad (nth r 2)))
     (mat4/scale m m (clj->js s))))
 
+(defonce vertex-shader-source
+  "attribute vec4 a_position;
+   attribute vec4 a_color;
+   uniform mat4 u_pMatrix;
+   uniform mat4 u_mvMatrix;
+   varying vec4 v_color;
+
+   void main() {
+     gl_Position = u_pMatrix * u_mvMatrix * a_position;
+     v_color = a_color;
+   }")
+
+(defonce fragment-shader-source
+  "precision mediump float;
+   uniform vec4 u_color;
+   varying vec4 v_color;
+
+   void main() {
+     gl_FragColor = v_color;
+   }")
+
+(defonce canvas (.getElementById js/document "canvas"))
+(defonce gl (context/get-context (.getElementById js/document "canvas")))
+(defonce shader (shaders/create-program gl
+                  (shaders/create-shader gl shader/vertex-shader vertex-shader-source)
+                  (shaders/create-shader gl shader/fragment-shader fragment-shader-source)))
+(defonce vertex-buffer (buffers/create-buffer gl square
+                                     buffer-object/array-buffer
+                                     buffer-object/static-draw
+                                     3))
+(defonce vertex-color-buffer (buffers/create-buffer gl
+                                           vertex-color
+                                           buffer-object/array-buffer
+                                           buffer-object/static-draw
+                                           4))
+(defonce ortho [10 10 10])
+(defonce fov 45)
+(defonce aspect-ratio (let [{width :width,
+                             height :height}
+                            (helpers/get-viewport gl)]
+                          (/ width height)))
+(defonce depth [0.1 100])
 
 
-(defn start [translate
+(defn draw [translate
              rotate
              scale]
-  (let [canvas      (.getElementById js/document "canvas")
-        gl          (context/get-context (.getElementById js/document "canvas"))
-        shader (shaders/create-program gl
-                 (shaders/create-shader gl shader/vertex-shader vertex-shader-source)
-                 (shaders/create-shader gl shader/fragment-shader fragment-shader-source))
-        vertex-buffer (buffers/create-buffer gl square
-                                             buffer-object/array-buffer
-                                             buffer-object/static-draw
-                                             3)
-        vertex-color-buffer (buffers/create-buffer gl
-                                                   vertex-color
-                                                   buffer-object/array-buffer
-                                                   buffer-object/static-draw
-                                                   4)
-    
-        ortho [10 10 10]
-        fov 45
-        aspect-ratio (let [{width :width,
-                            height :height}
-                           (helpers/get-viewport gl)]
-                        (/ width height))
-        depth [0.1 100]]
-
 
     (-> gl
      (buffers/clear-color-buffer 0.2 0.2 0.2 1)
@@ -124,4 +122,4 @@
                      [{:name "u_pMatrix" :type :mat4 :values
                         (perspective-projection-matrix fov aspect-ratio depth)}
                       {:name "u_mvMatrix" :type :mat4 :values
-                        (model-view-matrix translate rotate scale)}]))))
+                        (model-view-matrix translate rotate scale)}])))
