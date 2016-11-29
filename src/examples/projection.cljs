@@ -9,46 +9,45 @@
             [cljs-webgl.constants.capability :as capability]
             [cljs-webgl.buffers :as buffers]
             [cljs-webgl.typed-arrays :as ta]
-            [gl-helpers.core :as helpers]  ;; missing in cljs-webgl.context??
+            [common.core :as common]  ;; missing in cljs-webgl.context??
             [geometry.basic-shapes :refer [square square-color]]
-            [shader-source.core :refer [vertex-shader-source
-                                        fragment-shader-source]]
-            [mat4]))
+            [shader-source.core :refer [basic-vertex-shader
+                                        basic-fragment-shader]]))
 
 (enable-console-print!)
 
-(defn deg->rad [degrees]
- (/ (* degrees Math/PI) 180))
-
-
-(defn ortho-projection-matrix
-  [frustrum]
-  (let [halfX (/ (nth frustrum 0) 2.0)
-        halfY (/ (nth frustrum 1) 2.0)
-        halfZ (/ (nth frustrum 2) 2.0)]
-    (mat4/ortho
-      (mat4/create)
-      (- halfX) halfX (- halfY) halfY (- halfZ) 10)))
-
-(defn perspective-projection-matrix
-  [fov aspect-ratio depth]
-  (mat4/perspective
-    (mat4/create)
-    fov aspect-ratio (nth depth 0) (nth depth 1)))
-
-(defn model-view-matrix [t r s]
-  (let [m (mat4/create)]
-    (mat4/translate m m (clj->js t))
-    (mat4/rotateX m m (deg->rad (nth r 0)))
-    (mat4/rotateY m m (deg->rad (nth r 1)))
-    (mat4/rotateZ m m (deg->rad (nth r 2)))
-    (mat4/scale m m (clj->js s))))
+; (defn deg->rad [degrees]
+;  (/ (* degrees Math/PI) 180))
+;
+;
+; (defn ortho-projection-matrix
+;   [frustrum]
+;   (let [halfX (/ (nth frustrum 0) 2.0)
+;         halfY (/ (nth frustrum 1) 2.0)
+;         halfZ (/ (nth frustrum 2) 2.0)]
+;     (mat4/ortho
+;       (mat4/create)
+;       (- halfX) halfX (- halfY) halfY (- halfZ) 10)))
+;
+; (defn perspective-projection-matrix
+;   [fov aspect-ratio depth]
+;   (mat4/perspective
+;     (mat4/create)
+;     fov aspect-ratio (nth depth 0) (nth depth 1)))
+;
+; (defn model-view-matrix [t r s]
+;   (let [m (mat4/create)]
+;     (mat4/translate m m (clj->js t))
+;     (mat4/rotateX m m (deg->rad (nth r 0)))
+;     (mat4/rotateY m m (deg->rad (nth r 1)))
+;     (mat4/rotateZ m m (deg->rad (nth r 2)))
+;     (mat4/scale m m (clj->js s))))
 
 (defonce canvas (.getElementById js/document "canvas"))
 (defonce gl (context/get-context (.getElementById js/document "canvas")))
 (defonce shader (shaders/create-program gl
-                  (shaders/create-shader gl shader/vertex-shader vertex-shader-source)
-                  (shaders/create-shader gl shader/fragment-shader fragment-shader-source)))
+                  (shaders/create-shader gl shader/vertex-shader basic-vertex-shader)
+                  (shaders/create-shader gl shader/fragment-shader basic-fragment-shader)))
 (defonce vertex-buffer (buffers/create-buffer gl square
                                      buffer-object/array-buffer
                                      buffer-object/static-draw
@@ -62,7 +61,7 @@
 (defonce fov 45)
 (defonce aspect-ratio (let [{width :width,
                              height :height}
-                            (helpers/get-viewport gl)]
+                            (common/get-viewport gl)]
                           (/ width height)))
 (defonce depth [0.1 100])
 
@@ -91,6 +90,6 @@
                     :uniforms
                     ;  [{:name "u_pMatrix" :type :mat4 :values (ortho-projection-matrix ortho)}]
                      [{:name "u_pMatrix" :type :mat4 :values
-                        (perspective-projection-matrix fov aspect-ratio depth)}
+                        (common/perspective-projection-matrix fov aspect-ratio depth)}
                       {:name "u_mvMatrix" :type :mat4 :values
-                        (model-view-matrix translate rotate scale)}])))
+                        (common/model-view-matrix translate rotate scale)}])))
