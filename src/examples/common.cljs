@@ -9,31 +9,32 @@
 
  [gl-context]
  (let [[x y w h]
-       (.apply js/Array [] (.getParameter gl-context parameter-name/viewport))] ;; TODO: Is there any other way to access typed array values?
+       ;; TODO: Is there any other way to access typed array values?
+       (.apply js/Array [] (.getParameter gl-context parameter-name/viewport))]
    {:x x, :y y, :width w, :height h}))
 
 (defn deg->rad [degrees]
  (/ (* degrees Math/PI) 180))
 
 (defn ortho-projection-matrix
-  [frustrum]
-  (let [halfX (/ (nth frustrum 0) 2.0)
-        halfY (/ (nth frustrum 1) 2.0)
-        halfZ (/ (nth frustrum 2) 2.0)]
+  [[width height depth]]
+  (let [halfX (/ width 2.0)
+        halfY (/ height 2.0)
+        halfZ (/ depth 2.0)]
     (mat4/ortho
       (mat4/create)
       (- halfX) halfX (- halfY) halfY (- halfZ) 10)))
 
 (defn perspective-projection-matrix
-  [fov aspect-ratio depth]
+  [fov aspect-ratio [near far]]
   (mat4/perspective
     (mat4/create)
-    fov aspect-ratio (nth depth 0) (nth depth 1)))
+    fov aspect-ratio near far))
 
-(defn model-view-matrix [t r s]
+(defn model-view-matrix [t [rx ry rz] s]
   (let [m (mat4/create)]
     (mat4/translate m m (clj->js t))
-    (mat4/rotateX m m (deg->rad (nth r 0)))
-    (mat4/rotateY m m (deg->rad (nth r 1)))
-    (mat4/rotateZ m m (deg->rad (nth r 2)))
+    (mat4/rotateX m m (deg->rad rx))
+    (mat4/rotateY m m (deg->rad ry))
+    (mat4/rotateZ m m (deg->rad rz))
     (mat4/scale m m (clj->js s))))

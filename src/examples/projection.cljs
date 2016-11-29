@@ -16,47 +16,31 @@
 
 (enable-console-print!)
 
-; (defn deg->rad [degrees]
-;  (/ (* degrees Math/PI) 180))
-;
-;
-; (defn ortho-projection-matrix
-;   [frustrum]
-;   (let [halfX (/ (nth frustrum 0) 2.0)
-;         halfY (/ (nth frustrum 1) 2.0)
-;         halfZ (/ (nth frustrum 2) 2.0)]
-;     (mat4/ortho
-;       (mat4/create)
-;       (- halfX) halfX (- halfY) halfY (- halfZ) 10)))
-;
-; (defn perspective-projection-matrix
-;   [fov aspect-ratio depth]
-;   (mat4/perspective
-;     (mat4/create)
-;     fov aspect-ratio (nth depth 0) (nth depth 1)))
-;
-; (defn model-view-matrix [t r s]
-;   (let [m (mat4/create)]
-;     (mat4/translate m m (clj->js t))
-;     (mat4/rotateX m m (deg->rad (nth r 0)))
-;     (mat4/rotateY m m (deg->rad (nth r 1)))
-;     (mat4/rotateZ m m (deg->rad (nth r 2)))
-;     (mat4/scale m m (clj->js s))))
+;; Initialization
+(defonce canvas
+  (.getElementById js/document "canvas"))
+(defonce gl
+  (context/get-context (.getElementById js/document "canvas")))
+(defonce shader
+  (shaders/create-program gl
+     (shaders/create-shader gl shader/vertex-shader basic-vertex-shader)
+     (shaders/create-shader gl shader/fragment-shader basic-fragment-shader)))
+(defonce vertex-buffer
+  (buffers/create-buffer gl square
+                         buffer-object/array-buffer
+                         buffer-object/static-draw
+                         3))
+(defonce vertex-color-buffer
+  (buffers/create-buffer gl
+                         square-color
+                         buffer-object/array-buffer
+                         buffer-object/static-draw
+                         4))
+(defonce position-location
+  (shaders/get-attrib-location gl shader "a_position"))
+(defonce color-location
+  (shaders/get-attrib-location gl shader "a_color"))
 
-(defonce canvas (.getElementById js/document "canvas"))
-(defonce gl (context/get-context (.getElementById js/document "canvas")))
-(defonce shader (shaders/create-program gl
-                  (shaders/create-shader gl shader/vertex-shader basic-vertex-shader)
-                  (shaders/create-shader gl shader/fragment-shader basic-fragment-shader)))
-(defonce vertex-buffer (buffers/create-buffer gl square
-                                     buffer-object/array-buffer
-                                     buffer-object/static-draw
-                                     3))
-(defonce vertex-color-buffer (buffers/create-buffer gl
-                                           square-color
-                                           buffer-object/array-buffer
-                                           buffer-object/static-draw
-                                           4))
 (defonce ortho [10 10 10])
 (defonce fov 45)
 (defonce aspect-ratio (let [{width :width,
@@ -78,17 +62,18 @@
                     :capabilities {capability/depth-test true}
                     :attributes
                     [{:buffer vertex-buffer
-                      :location (shaders/get-attrib-location gl shader "a_position")
+                      :location position-location
                       :components-per-vertex (.-itemSize vertex-buffer)
                       :type data-type/float}
 
                      {:buffer vertex-color-buffer
-                      :location (shaders/get-attrib-location gl shader "a_color")
+                      :location color-location
                       :components-per-vertex (.-itemSize vertex-color-buffer)
                       :type data-type/float}]
 
                     :uniforms
-                    ;  [{:name "u_pMatrix" :type :mat4 :values (ortho-projection-matrix ortho)}]
+                    ;  [{:name "u_pMatrix" :type :mat4 :values
+                    ;       (common/ortho-projection-matrix ortho)}
                      [{:name "u_pMatrix" :type :mat4 :values
                         (common/perspective-projection-matrix fov aspect-ratio depth)}
                       {:name "u_mvMatrix" :type :mat4 :values
