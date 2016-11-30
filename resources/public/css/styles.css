@@ -13,7 +13,7 @@
   max-width: 400px;
 }
 
-#transform-panel {
+#ui-panel {
   flex: 1 1 auto;
   display: flex;
   flex-flow: row wrap;
@@ -21,54 +21,21 @@
   border: 1px solid grey;
 }
 
-#translate-panel {
+.panel {
   flex: 1 1 auto;
   padding: 0.5rem;
   flex-flow: column nowrap;
   /*border: 1px dashed green;*/
 }
-#tx {
+.x {
   flex: 1 1 auto;
 }
-#ty {
+.y {
   flex: 1 1 auto;
 }
-#tz {
+.z {
   flex: 1 1 auto;
 }
-
-#rotate-panel {
-  flex: 1 1 auto;
-  flex-flow: column nowrap;
-  padding: 0.5rem;
-  /*border: 1px dashed green;*/
-}
-#rx {
-  flex: 1 1 auto;
-}
-#ry {
-  flex: 1 1 auto;
-}
-#rz {
-  flex: 1 1 auto;
-}
-
-#scale-panel {
-  flex: 1 1 auto;
-  flex-flow: column nowrap;
-  padding: 0.5rem;
-  /*border: 1px dashed green;*/
-}
-#sx {
-  flex: 1 1 auto;
-}
-#sy {
-  flex: 1 1 auto;
-}
-#sz {
-  flex: 1 1 auto;
-}
-
 
 .slider {
   flex: 1 1 auto;

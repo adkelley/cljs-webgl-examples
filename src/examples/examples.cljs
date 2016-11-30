@@ -24,48 +24,48 @@
 
 (defn scale-panel []
    (let [{:keys [sx sy sz]} @transform]
-     [:div {:id "scale-panel"}
+     [:div {:class "panel"}
        [:h3 "Scaling"]
-       [:div {:id "sx"}
+       [:div {:class "x"}
         "X: " (int sx)
         [slider :sx sx -5 5]]
-       [:div {:id "sy"}
+       [:div {:class "y"}
         "Y: " (int sy)
         [slider :sy sy -5 5]]
-       [:div {:id "sz"}
+       [:div {:class "z"}
         "Z: " (int sz)
         [slider :sz sz -5 5]]]))
 
 (defn translate-panel []
   (let [{:keys [tx ty tz]} @transform]
-    [:div {:id "translate-panel"}
+    [:div {:class "panel"}
       [:h3 "Translation"]
-      [:div {:id "tx"}
+      [:div {:class "x"}
        "X: " (int tx)
        [slider :tx tx -50 50]]
-      [:div {:id "ty"}
+      [:div {:class "y"}
        "Y: " (int ty)
        [slider :ty ty -50 50]]
-      [:div {:id "tz"}
+      [:div {:class "z"}
        "Z: " (int tz)
        [slider :tz tz -100 -0.1]]]))
 
 (defn rotate-panel []
    (let [{:keys [rx ry rz]} @transform]
-     [:div {:id "rotate-panel"}
+     [:div {:class "panel"}
        [:h3 "Rotation"]
-       [:div {:id "rx"}
+       [:div {:class "x"}
         "X: " (int rx)
         [slider :rx rx 0 359]]
-       [:div {:id "ry"}
+       [:div {:class "y"}
         "Y: " (int ry)
         [slider :ry ry 0 359]]
-       [:div {:id "rz"}
+       [:div {:class "z"}
         "Z: " (int rz)
         [slider :rz rz 0 359]]]))
 
-(defn transform-panel []
-  [:div {:id "transform-panel"}
+(defn ui-panel []
+  [:div {:id "ui-panel"}
     [translate-panel]
     [rotate-panel]
     [scale-panel]])
@@ -74,10 +74,10 @@
               rx ry rz
               sx sy sz]} @transform]
   (projection/draw [tx ty tz]
-                    [rx ry rz]
-                    [sx sy sz])
+                   [rx ry rz]
+                   [sx sy sz])
   (r/render
-    [transform-panel]
+    [ui-panel]
     (. js/document (getElementById "app"))))
 
 
