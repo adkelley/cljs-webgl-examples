@@ -25,9 +25,9 @@
 (defonce texture-vertex-shader
   "attribute vec4 a_position;
    attribute vec2 a_texcoord;
-   uniform u_mvMatrix;
-   uniform u_pMatrix;
-   varying v_texcoord;
+   uniform mat4 u_mvMatrix;
+   uniform mat4 u_pMatrix;
+   varying vec2 v_texcoord;
 
    void main() {
      gl_Position = u_pMatrix * u_mvMatrix * a_position;

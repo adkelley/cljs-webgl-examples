@@ -1,6 +1,14 @@
 (ns common.core
-  (:require [cljs-webgl.constants.parameter-name :as parameter-name]
-            [mat4]))
+  (:require
+    [cljs-webgl.constants.parameter-name :as parameter-name]
+    [cljs-webgl.texture :as texture]
+    [cljs-webgl.constants.texture-parameter-name :as texture-parameter-name]
+    [cljs-webgl.constants.texture-target :as target]
+    [cljs-webgl.constants.pixel-format :as format]
+    [cljs-webgl.constants.texture-filter :as texture-filter]
+    [cljs-webgl.constants.webgl :as webgl]
+    [WebGLUtils]
+    [mat4]))
 
 ;; Not in the cljs-webgl "0.1.5-SNAPSHOT"
 (defn get-viewport
@@ -38,3 +46,29 @@
     (mat4/rotateY m m (deg->rad ry))
     (mat4/rotateZ m m (deg->rad rz))
     (mat4/scale m m (clj->js s))))
+
+(defn animate [draw-fn]
+  (letfn [(loop [frame]
+            (fn []
+              (.requestAnimFrame  js/window (loop (inc frame)))
+              (draw-fn frame)))]
+    ((loop 0))))
+
+(defn load-image
+  [url callback-fn]
+  (let [img (js/Image.)]
+    (set! (.-onload img) (fn [] (callback-fn img)))
+    (set! (.-crossOrigin img) "anonymous")
+    (set! (.-src img) url)))
+
+(defn load-texture
+  "Loads the texture from the given URL. Note that the image is loaded in the background,
+   and the returned texture will not immediately be fully initialized."
+  [gl-context url callback-fn]
+  (load-image url (fn [img] (callback-fn
+                              (texture/create-texture
+                                gl-context
+                                :image img
+                                :pixel-store-modes {webgl/unpack-flip-y-webgl true}
+                                :parameters {texture-parameter-name/texture-mag-filter texture-filter/nearest
+                                             texture-parameter-name/texture-min-filter texture-filter/nearest})))))

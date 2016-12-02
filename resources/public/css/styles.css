@@ -27,13 +27,7 @@
   flex-flow: column nowrap;
   /*border: 1px dashed green;*/
 }
-.x {
-  flex: 1 1 auto;
-}
-.y {
-  flex: 1 1 auto;
-}
-.z {
+.panel > * {
   flex: 1 1 auto;
 }
 

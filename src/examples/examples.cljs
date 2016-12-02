@@ -1,11 +1,12 @@
 (ns examples.core
   (:require [projection.core :as projection]
+            [texture-map.core :as texture-map]
             [triangle.core :as triangle]
             [reagent.core :as r]))
 
 (enable-console-print!)
 
-(println "Rendering Example: projection.cljs")
+(println "Rendering Example: texture-map.cljs")
 
 (defonce transform (r/atom {:tx 0 :ty 0 :tz -10
                             :rx 0 :ry 0 :rz 0
@@ -19,7 +20,7 @@
                           (let [{:keys [tx ty tz
                                         sx sy sz
                                         rx ry rz]} @transform]
-                             (projection/draw [tx ty tz] [rx ry rz] [sx sy sz])))}]])
+                             (texture-map/draw [tx ty tz] [rx ry rz] [sx sy sz])))}]])
 
 
 (defn scale-panel []
@@ -28,13 +29,13 @@
        [:h3 "Scaling"]
        [:div {:class "x"}
         "X: " (int sx)
-        [slider :sx sx -5 5]]
+        [slider :sx sx 1 5]]
        [:div {:class "y"}
         "Y: " (int sy)
-        [slider :sy sy -5 5]]
+        [slider :sy sy 1 5]]
        [:div {:class "z"}
         "Z: " (int sz)
-        [slider :sz sz -5 5]]]))
+        [slider :sz sz 1 5]]]))
 
 (defn translate-panel []
   (let [{:keys [tx ty tz]} @transform]
@@ -70,15 +71,14 @@
     [rotate-panel]
     [scale-panel]])
 
+(defn on-js-reload [])
+
 (let [{:keys [tx ty tz
               rx ry rz
               sx sy sz]} @transform]
-  (projection/draw [tx ty tz]
-                   [rx ry rz]
-                   [sx sy sz])
+  (texture-map/draw [tx ty tz]
+                [rx ry rz]
+                [sx sy sz])
   (r/render
     [ui-panel]
     (. js/document (getElementById "app"))))
-
-
-(defn on-js-reload [])
