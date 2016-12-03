@@ -1,4 +1,4 @@
-(ns texture-map.core
+(ns square-texture.core
   (:require [cljs-webgl.context :as context]
             [cljs-webgl.shaders :as shaders]
             [cljs-webgl.constants.draw-mode :as draw-mode]
@@ -41,20 +41,20 @@
                           (/ width height)))
 (defonce depth [0.1 100])
 
-(defonce my-texture (atom {:texture nil}))
+(defonce my-texture (atom {:texture nil :loaded false}))
 
 
 (common/load-texture
   gl
-  "./images/nehe.gif"
-  (fn [nehe-texture]
-    (println "loading texture")
-    (swap! my-texture assoc :texture nehe-texture)))
+  "./images/webgl-logo-256.png"
+  (fn [webgl-texture]
+    (println "texture loaded")
+    (swap! my-texture assoc :texture webgl-texture :loaded true)))
 
 (defn draw [translate
             rotate
             scale]
-
+  (when (:loaded @my-texture)
     (-> gl
       (buffers/clear-color-buffer 0.0 0.0 0.0 1.0)
       (buffers/clear-depth-buffer 1)
@@ -78,4 +78,4 @@
                         {:name "u_mvMatrix" :type :mat4 :values
                           (common/model-view-matrix translate rotate scale)}]
                      :textures
-                       [{:name "u_texture" :texture (:texture @my-texture)}])))
+                       [{:name "u_texture" :texture (:texture @my-texture)}]))))

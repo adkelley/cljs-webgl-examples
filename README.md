@@ -28,6 +28,7 @@ To change to another example (e.g., triangle.cljs -> projection.cljs), update li
 1. **triangle.cljs**   - draw a triangle with a one-to-one mapping from model space to GL clip space
 2. **projection.cljs** - draw a square by transforming [ModelViewProjectionMatrix] X (Square Vertices). Default is a perspective projection.  Choose an orthographic projection by uncommenting line *119* and commenting out line *121*.
 Choose another shape (e.g., triangle, F-Shape) by modifying lines *13*, *52* & *57*.
+3. **square-texture.cljs** - draw a square using a WebGL logo as a texture map.  
 
 Future
 ----
