@@ -24,7 +24,7 @@
 (defn deg->rad [degrees]
  (/ (* degrees Math/PI) 180))
 
-(defn ortho-projection-matrix
+(defn ortho-projection
   [[width height depth]]
   (let [halfX (/ width 2.0)
         halfY (/ height 2.0)
@@ -33,11 +33,22 @@
       (mat4/create)
       (- halfX) halfX (- halfY) halfY (- halfZ) 10)))
 
-(defn perspective-projection-matrix
+; (defn perspective-projection
+;   [fov aspect [near far]]
+;   (let [f (Math/tan(- (* Math/PI 0.5) (* (deg->rad fov) 0.5)))
+;         range-inv (/ 1.0 (- near far))]
+;     (mat4/fromValues
+;       (/ f aspect) 0 0 0
+;       0 f 0 0
+;       0 0 (* range-inv (+ near far)) -1
+;       0 0 (* near far range-inv 2) 0)))
+
+
+(defn perspective-projection
   [fov aspect-ratio [near far]]
   (mat4/perspective
     (mat4/create)
-    fov aspect-ratio near far))
+    (deg->rad fov) aspect-ratio near far))
 
 (defn model-view-matrix [t [rx ry rz] s]
   (let [m (mat4/create)]

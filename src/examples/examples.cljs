@@ -6,10 +6,10 @@
 
 (enable-console-print!)
 
-(println "Rendering Example: square-texture.cljs")
+(println "Rendering Example: projection.cljs")
 
-(defonce transform (r/atom {:tx 0 :ty 0 :tz -10
-                            :rx 0 :ry 0 :rz 0
+(defonce transform (r/atom {:tx -50 :ty 50 :tz -400
+                            :rx 0 :ry 45 :rz 0
                             :sx 1 :sy 1 :sz 1}))
 
 (defn slider [param value min max]
@@ -20,7 +20,7 @@
                           (let [{:keys [tx ty tz
                                         sx sy sz
                                         rx ry rz]} @transform]
-                             (square-texture/draw [tx ty tz] [rx ry rz] [sx sy sz])))}]])
+                             (projection/draw [tx ty tz] [rx ry rz] [sx sy sz])))}]])
 
 
 (defn scale-panel []
@@ -43,13 +43,13 @@
       [:h3 "Translation"]
       [:div {:class "x"}
        "X: " (int tx)
-       [slider :tx tx -50 50]]
+       [slider :tx tx -200 200]]
       [:div {:class "y"}
        "Y: " (int ty)
-       [slider :ty ty -50 50]]
+       [slider :ty ty -200 200]]
       [:div {:class "z"}
        "Z: " (int tz)
-       [slider :tz tz -100 -0.1]]]))
+       [slider :tz tz -1000 0]]]))
 
 (defn rotate-panel []
    (let [{:keys [rx ry rz]} @transform]
@@ -76,7 +76,7 @@
 (let [{:keys [tx ty tz
               rx ry rz
               sx sy sz]} @transform]
-  (square-texture/draw
+  (projection/draw
     [tx ty tz]
     [rx ry rz]
     [sx sy sz])

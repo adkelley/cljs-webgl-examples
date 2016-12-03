@@ -40,6 +40,8 @@
                             (common/get-viewport gl)]
                           (/ width height)))
 (defonce depth [0.1 100])
+(defonce projection-matrix
+  (common/perspective-projection fov aspect-ratio depth))
 
 (defonce my-texture (atom {:texture nil :loaded false}))
 
@@ -73,8 +75,7 @@
                          :type data-type/float}]
 
                      :uniforms
-                       [{:name "u_pMatrix" :type :mat4 :values
-                          (common/perspective-projection-matrix fov aspect-ratio depth)}
+                       [{:name "u_pMatrix" :type :mat4 :values projection-matrix}
                         {:name "u_mvMatrix" :type :mat4 :values
                           (common/model-view-matrix translate rotate scale)}]
                      :textures

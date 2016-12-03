@@ -10,13 +10,14 @@
             [cljs-webgl.buffers :as buffers]
             [cljs-webgl.typed-arrays :as ta]
             [common.core :as common]  ;; missing in cljs-webgl.context??
-            [geometry.basic-shapes :refer [square square-color]]
+            [geometry.basic-shapes :refer [make-cube cube-color]]
             [shader-source.core :refer [basic-vertex-shader
                                         basic-fragment-shader]]))
 
 (enable-console-print!)
 
 ;; Initialization
+(defonce cube (make-cube 0 0 0 50 50 50))
 (defonce canvas
   (.getElementById js/document "canvas"))
 (defonce gl
@@ -26,13 +27,13 @@
      (shaders/create-shader gl shader/vertex-shader basic-vertex-shader)
      (shaders/create-shader gl shader/fragment-shader basic-fragment-shader)))
 (defonce vertex-buffer
-  (buffers/create-buffer gl square
+  (buffers/create-buffer gl cube
                          buffer-object/array-buffer
                          buffer-object/static-draw
                          3))
 (defonce vertex-color-buffer
   (buffers/create-buffer gl
-                         square-color
+                         cube-color
                          buffer-object/array-buffer
                          buffer-object/static-draw
                          4))
@@ -42,12 +43,15 @@
   (shaders/get-attrib-location gl shader "a_color"))
 
 (defonce ortho [10 10 10])
-(defonce fov 45)
+(defonce fov 60)
 (defonce aspect-ratio (let [{width :width,
                              height :height}
                             (common/get-viewport gl)]
                           (/ width height)))
-(defonce depth [0.1 100])
+(defonce depth [1 2000])
+(defonce projection-matrix
+  (common/perspective-projection fov aspect-ratio depth))
+(println projection-matrix)
 
 (defn draw [translate
             rotate
@@ -59,7 +63,7 @@
      (buffers/draw! :shader shader
                     :draw-mode draw-mode/triangles
                     :count (.-numItems vertex-buffer)
-                    :capabilities {capability/depth-test true}
+                    :capabilities {capability/depth-test true capability/cull-face true}
                     :attributes
                     [{:buffer vertex-buffer
                       :location position-location
@@ -72,9 +76,6 @@
                       :type data-type/float}]
 
                     :uniforms
-                    ;  [{:name "u_pMatrix" :type :mat4 :values
-                    ;       (common/ortho-projection-matrix ortho)}
-                     [{:name "u_pMatrix" :type :mat4 :values
-                        (common/perspective-projection-matrix fov aspect-ratio depth)}
+                     [{:name "u_pMatrix" :type :mat4 :values projection-matrix}
                       {:name "u_mvMatrix" :type :mat4 :values
                         (common/model-view-matrix translate rotate scale)}])))
