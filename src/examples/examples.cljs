@@ -28,14 +28,14 @@
      [:div {:class "panel"}
        [:h3 "Scaling"]
        [:div {:class "x"}
-        "X: " (int sx)
-        [slider :sx sx 1 5 1]]
+        "X: " (float sx)
+        [slider :sx sx 1 5 0.25]]
        [:div {:class "y"}
-        "Y: " (int sy)
-        [slider :sy sy 1 5 1]]
+        "Y: " (float sy)
+        [slider :sy sy 1 5 0.25]]
        [:div {:class "z"}
-        "Z: " (int sz)
-        [slider :sz sz 1 5 1]]]))
+        "Z: " (float sz)
+        [slider :sz sz 1 5 0.25]]]))
 
 (defn translate-panel []
   (let [{:keys [tx ty tz]} @transform]
