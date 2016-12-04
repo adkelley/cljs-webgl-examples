@@ -15,6 +15,11 @@
               0.0 1.0 0.0 1.0
               0.0 0.0 1.0 1.0]))
 
+(defonce triangle-texture-coord
+ (ta/float32 [0.0 0.0
+              1.0 0.0
+              0.5 1.0]))            
+
 (defn set-square
   [x0 y0 z0 x1 y1 z1]
   (ta/float32

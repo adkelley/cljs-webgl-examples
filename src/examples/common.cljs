@@ -58,12 +58,12 @@
     (mat4/rotateZ m m (deg->rad rz))
     (mat4/scale m m (clj->js s))))
 
-(defn animate [draw-fn]
-  (letfn [(loop [frame]
-            (fn []
-              (.requestAnimFrame  js/window (loop (inc frame)))
-              (draw-fn frame)))]
-    ((loop 0))))
+; (defn animate [draw-fn]
+;   (letfn [(loop [frame]
+;             (fn []
+;               (.requestAnimFrame  js/window (loop (inc frame)))
+;               (draw-fn frame)))]
+;     ((loop 0))))
 
 (defn load-image
   [url callback-fn]
