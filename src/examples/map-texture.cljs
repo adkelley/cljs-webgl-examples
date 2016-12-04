@@ -1,4 +1,4 @@
-(ns square-texture.core
+(ns map-texture.core
   (:require [cljs-webgl.context :as context]
             [cljs-webgl.shaders :as shaders]
             [cljs-webgl.constants.draw-mode :as draw-mode]
@@ -10,7 +10,7 @@
             [cljs-webgl.buffers :as buffers]
             [cljs-webgl.typed-arrays :as ta]
             [common.core :as common]  ;; missing in cljs-webgl.context??
-            [geometry.basic-shapes :refer [square square-texture-coord]]
+            [geometry.basic-shapes :refer [set-cube cube-texture-coord]]
             [shader-source.core :refer [texture-vertex-shader
                                         texture-fragment-shader]]
             [mat4]
@@ -18,28 +18,29 @@
 
 (enable-console-print!)
 
+(defonce cube (set-cube 0 0 0 50 50 50))
 (defonce canvas (.getElementById js/document "canvas"))
 (defonce gl (context/get-context (.getElementById js/document "canvas")))
 (defonce shader (shaders/create-program gl
                   (shaders/create-shader gl shader/vertex-shader texture-vertex-shader)
                   (shaders/create-shader gl shader/fragment-shader texture-fragment-shader)))
-(defonce position-buffer (buffers/create-buffer gl square
+(defonce position-buffer (buffers/create-buffer gl cube
                                      buffer-object/array-buffer
                                      buffer-object/static-draw
                                      3))
 (defonce texture-coord-buffer (buffers/create-buffer gl
-                                     square-texture-coord
+                                     cube-texture-coord
                                      buffer-object/array-buffer
                                      buffer-object/static-draw
                                      2))
 
 (defonce ortho [10 10 10])
-(defonce fov 45)
+(defonce fov 60)
 (defonce aspect-ratio (let [{width :width,
                              height :height}
                             (common/get-viewport gl)]
                           (/ width height)))
-(defonce depth [0.1 100])
+(defonce depth [1 2000])
 (defonce projection-matrix
   (common/perspective-projection fov aspect-ratio depth))
 
@@ -63,7 +64,7 @@
       (buffers/draw! :shader shader
                      :draw-mode draw-mode/triangles
                      :count (.-numItems position-buffer)
-                     :capabilities {capability/depth-test true}
+                     :capabilities {capability/depth-test true capability/cull-face true}
                      :attributes
                        [{:buffer position-buffer
                          :location (shaders/get-attrib-location gl shader "a_position")

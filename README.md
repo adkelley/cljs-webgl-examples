@@ -22,13 +22,13 @@ better, more interactive development experience:
 then point your webGL capable browser to http://localhost:3449/index.html
 
 
-To change to another example (e.g., triangle.cljs -> projection.cljs), update lines *22* & *76* in `src/examples/examples.cljs`
+To change to another example (e.g., triangle -> projection -> texture-map), comment out the other examples in `src/examples/examples.cljs` from lines *3*-*5*.  Then, modify lines *24* and *80* with the example you wish to run.
 
 ### Sandbox Examples (WIP)
 1. **triangle.cljs**   - draw a triangle with a one-to-one mapping from model space to GL clip space
-2. **projection.cljs** - draw a square by transforming [ModelViewProjectionMatrix] X (Square Vertices). Default is a perspective projection.  Choose an orthographic projection by uncommenting line *119* and commenting out line *121*.
-Choose another shape (e.g., triangle, F-Shape) by modifying lines *13*, *52* & *57*.
-3. **square-texture.cljs** - draw a square using a WebGL logo as a texture map.  
+2. **projection.cljs** - draw a shape by transforming [ModelViewProjectionMatrix] X (Square Vertices). Default is a perspective projection.  Choose an orthographic projection by uncommenting line *119* and commenting out line *121*.
+Choose another shape (e.g., triangle, cube) by modifying lines *13*, *20*, *30* & *36*.
+3. **texture-map.cljs** - draw a shape from `basic-shapes.cljs` using a WebGL logo as a texture map.  
 
 Future
 ----

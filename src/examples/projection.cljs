@@ -10,14 +10,14 @@
             [cljs-webgl.buffers :as buffers]
             [cljs-webgl.typed-arrays :as ta]
             [common.core :as common]  ;; missing in cljs-webgl.context??
-            [geometry.basic-shapes :refer [set-cube cube-color]]
+            [geometry.basic-shapes :refer [set-square square-color]]
             [shader-source.core :refer [basic-vertex-shader
                                         basic-fragment-shader]]))
 
 (enable-console-print!)
 
 ;; Initialization
-(defonce cube (set-cube 0 0 0 50 50 50))
+(defonce square (set-square 0 0 0 50 50 0))
 (defonce canvas
   (.getElementById js/document "canvas"))
 (defonce gl
@@ -27,13 +27,13 @@
      (shaders/create-shader gl shader/vertex-shader basic-vertex-shader)
      (shaders/create-shader gl shader/fragment-shader basic-fragment-shader)))
 (defonce vertex-buffer
-  (buffers/create-buffer gl cube
+  (buffers/create-buffer gl square
                          buffer-object/array-buffer
                          buffer-object/static-draw
                          3))
 (defonce vertex-color-buffer
   (buffers/create-buffer gl
-                         cube-color
+                         square-color
                          buffer-object/array-buffer
                          buffer-object/static-draw
                          4))
@@ -51,7 +51,6 @@
 (defonce depth [1 2000])
 (defonce projection-matrix
   (common/perspective-projection fov aspect-ratio depth))
-(println projection-matrix)
 
 (defn draw [translate
             rotate

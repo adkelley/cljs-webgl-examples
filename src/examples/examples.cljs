@@ -1,12 +1,13 @@
 (ns examples.core
-  (:require [projection.core :as projection]
-            [square-texture.core :as square-texture]
-            [triangle.core :as triangle]
-            [reagent.core :as r]))
+  (:require
+    ; [projection.core :as projection]
+    [map-texture.core :as texture]
+    ; [triangle.core :as triangle]
+    [reagent.core :as r]))
 
 (enable-console-print!)
 
-(println "Rendering Example: projection.cljs")
+(println "Rendering Example: map-texture.cljs")
 
 (defonce transform (r/atom {:tx -50 :ty 50 :tz -400
                             :rx 0 :ry 45 :rz 0
@@ -20,7 +21,7 @@
                           (let [{:keys [tx ty tz
                                         sx sy sz
                                         rx ry rz]} @transform]
-                             (projection/draw [tx ty tz] [rx ry rz] [sx sy sz])))}]])
+                             (texture/draw [tx ty tz] [rx ry rz] [sx sy sz])))}]])
 
 
 (defn scale-panel []
@@ -76,7 +77,7 @@
 (let [{:keys [tx ty tz
               rx ry rz
               sx sy sz]} @transform]
-  (projection/draw
+  (texture/draw
     [tx ty tz]
     [rx ry rz]
     [sx sy sz])
