@@ -2,12 +2,12 @@
   (:require
     ; [projection.core :as projection]
     ; [map-texture.core :as texture]
-    [triangle.core :as triangle] ;sliders are off in this example
+    [triangle.core :as triangle] ;sliders are off for this example
     [reagent.core :as r]))
 
 (enable-console-print!)
 
-(println "Rendering Example: map-texture.cljs")
+(println "Rendering Example: triangle.cljs")
 
 (defonce transform (r/atom {:tx -50 :ty 50 :tz -400
                             :rx 0 :ry 45 :rz 0

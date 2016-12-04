@@ -3,15 +3,17 @@
 
 ; model space for triangle and square is [-1 1 -1 1 -1 1]
 
-(defonce triangle
-  (ta/float32 [  0.0  1.0  0.0
-                -1.0 -1.0  0.0
-                 1.0 -1.0  0.0]))
+
+(defn set-triangle
+  [x0 y0 z0 x1 y1 z1 x2 y2 z2]
+  (ta/float32 [x0 y0 z0
+               x1 y1 z1
+               x2 y2 z2]))
 
 (defonce triangle-color
-  (ta/float32 [1.0 0.0 0.0 1.0
-               0.0 1.0 0.0 1.0
-               0.0 0.0 1.0 1.0]))
+ (ta/float32 [1.0 0.0 0.0 1.0
+              0.0 1.0 0.0 1.0
+              0.0 0.0 1.0 1.0]))
 
 (defn set-square
   [x0 y0 z0 x1 y1 z1]

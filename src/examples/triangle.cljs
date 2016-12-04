@@ -8,9 +8,10 @@
             [cljs-webgl.constants.shader :as shader]
             [cljs-webgl.buffers :as buffers]
             [cljs-webgl.typed-arrays :as ta]
-            [geometry.basic-shapes :refer [triangle]]))
+            [geometry.basic-shapes :refer [set-triangle]]))
 
 
+(defonce triangle (set-triangle 0.0 1.0 0.0 -1.0 -1.0 0.0 1.0 -1.0 0.0))
 (defonce randomColor
   (ta/float32 [(rand), (rand), (rand), 1]))
 
@@ -20,6 +21,7 @@
      gl_Position = vertex_position;
    }")
 
+;; set the vertex colors uniformly
 (def fragment-shader-source
   "precision mediump float;
 
@@ -58,7 +60,7 @@
                     :attributes
                     [{:buffer triangle-vertex-buffer
                       :location (shaders/get-attrib-location gl shader "vertex_position")
-                      :components-per-vertex 3
+                      :components-per-vertex (.-itemSize triangle-vertex-buffer)
                       :type data-type/float}]
 
                     :uniforms
