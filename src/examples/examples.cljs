@@ -1,8 +1,8 @@
 (ns examples.core
   (:require
     ; [projection.core :as projection]
-    [map-texture.core :as texture]
-    ; [triangle.core :as triangle]
+    ; [map-texture.core :as texture]
+    [triangle.core :as triangle] ;sliders are off in this example
     [reagent.core :as r]))
 
 (enable-console-print!)
@@ -21,7 +21,7 @@
                           (let [{:keys [tx ty tz
                                         sx sy sz
                                         rx ry rz]} @transform]
-                             (texture/draw [tx ty tz] [rx ry rz] [sx sy sz])))}]])
+                             (triangle/draw [tx ty tz] [rx ry rz] [sx sy sz])))}]])
 
 
 (defn scale-panel []
@@ -77,7 +77,7 @@
 (let [{:keys [tx ty tz
               rx ry rz
               sx sy sz]} @transform]
-  (texture/draw
+  (triangle/draw
     [tx ty tz]
     [rx ry rz]
     [sx sy sz])

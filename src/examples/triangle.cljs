@@ -33,17 +33,21 @@
   (.apply js/console.log js/console (to-array args)))
 
 
-(defn start []
-  (let [canvas      (.getElementById js/document "canvas")
-        gl          (context/get-context (.getElementById js/document "canvas"))
-        shader (shaders/create-program gl
-                 (shaders/create-shader gl shader/vertex-shader vertex-shader-source)
-                 (shaders/create-shader gl shader/fragment-shader fragment-shader-source))
-        triangle-vertex-buffer (buffers/create-buffer gl triangle
-                                             buffer-object/array-buffer
-                                             buffer-object/static-draw
-                                             3)]
+(defonce canvas (.getElementById js/document "canvas"))
+(defonce gl (context/get-context (.getElementById js/document "canvas")))
+(defonce shader (shaders/create-program gl
+                  (shaders/create-shader gl shader/vertex-shader vertex-shader-source)
+                  (shaders/create-shader gl shader/fragment-shader fragment-shader-source)))
+(defonce triangle-vertex-buffer
+  (buffers/create-buffer gl
+                         triangle
+                         buffer-object/array-buffer
+                         buffer-object/static-draw
+                         3))
 
+(defn draw [translate
+            rotate
+            scale] ; not used in this example
 
     (-> gl
      (buffers/clear-color-buffer 0.2 0.2 0.2 1)
@@ -58,4 +62,4 @@
                       :type data-type/float}]
 
                     :uniforms
-                    [{:name "u_color" :type :vec4 :values randomColor}]))))
+                    [{:name "u_color" :type :vec4 :values randomColor}])))
