@@ -3,7 +3,8 @@
     ; [projection.core :as projection]
     [map-texture.core :as texture]
     ; [triangle.core :as triangle] ;sliders are off for this example
-    [reagent.core :as r]))
+    [reagent.core :as r]
+    [clojure.string :refer [lower-case]]))
 
 (enable-console-print!)
 
@@ -41,26 +42,27 @@
     (for [slider sliders]
       ^{:key (gen-key)} [draw-slider slider])])
 
+(defn set-sliders
+  [prefix attributes]
+  (into [] (for [label ["X", "Y", "Z"]]
+             {:label label
+              :param (keyword (str prefix (lower-case label)))
+              :attributes attributes})))
+
 (defonce translate
   (let [attributes {:min -200 :max 200 :step 1}]
     {:label "Translation"
-     :sliders [{:label "X" :param :tx :attributes attributes}
-               {:label "Y" :param :ty :attributes attributes}
-               {:label "Z" :param :tz :attributes attributes}]}))
+     :sliders (set-sliders "t" attributes)}))
 
 (defonce scale
   (let [attributes {:min 1.0 :max 5.0 :step 0.25}]
     {:label "Scale"
-     :sliders [{:label "X" :param :sx :attributes attributes}
-               {:label "Y" :param :sy :attributes attributes}
-               {:label "Z" :param :sz :attributes attributes}]}))
+     :sliders (set-sliders "s" attributes)}))
 
 (defonce rotate
   (let [attributes {:min 0 :max 359 :step 1}]
     {:label "Rotation"
-     :sliders [{:label "X" :param :rx :attributes attributes}
-               {:label "Y" :param :ry :attributes attributes}
-               {:label "Z" :param :rz :attributes attributes}]}))
+     :sliders (set-sliders "r" attributes)}))
 
 (defn panel-component []
   [:div {:id "ui-panel"}
