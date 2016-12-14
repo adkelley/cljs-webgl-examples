@@ -13,68 +13,60 @@
                             :rx 0 :ry 45 :rz 0
                             :sx 1.0 :sy 1.0 :sz 1.0}))
 
-; (defn slider [param value min max step]
-;   [:div {:class "slider"}
-;     [:input {:type "range" :value value :min min :max max :step step
-;              :on-change (fn [e]
-;                           (swap! transform assoc param (.-target.value e))
-;                           (let [{:keys [tx ty tz
-;                                         sx sy sz
-;                                         rx ry rz]} @transform]
-;                              (texture/draw [tx ty tz] [rx ry rz] [sx sy sz])))}]])
+(defonce react-key (atom 0))
 
 (defn draw-slider
   [{:keys [label param attributes]}]
-  [:div
-    (str label ": ") (param @transform)
-    [:div {:class "slider"}
-      [:input (hash-map
-                :type "range"
-                :value (param @transform) :min (:min attributes)
-                :max (:max attributes) :step (:step attributes)
-                :on-change (fn [e]
-                             (swap! transform assoc param (.-target.value e))
-                             (let [{:keys [tx ty tz
-                                           sx sy sz
-                                           rx ry rz]} @transform]
-                               (texture/draw [tx ty tz] [rx ry rz] [sx sy sz]))))]]])
+  (let [{:keys [min max step]} attributes
+         value (param @transform)]
+    [:div
+      (str label ": ") value
+      [:div {:class "slider"}
+          [:input {:type "range" :value value :min min :max max :step step
+                   :on-change (fn [e]
+                                (swap! transform assoc param (.-target.value e))
+                                (let [{:keys [tx ty tz
+                                              sx sy sz
+                                              rx ry rz]} @transform]
+                                  (texture/draw [tx ty tz] [rx ry rz] [sx sy sz])))}]]]))
+
+(defn gen-key []
+  (swap! react-key inc)
+  @react-key)
 
 (defn draw-panel
   [{:keys [label sliders]}]
   [:div {:class "panel"}
     [:h3 label]
-    (map draw-slider sliders)])
-;
+    (for [slider sliders]
+      ^{:key (gen-key)} [draw-slider slider])])
 
-(defonce translate-sliders
+(defonce translate
   (let [attributes {:min -200 :max 200 :step 1}]
-    [{:label "X" :param :tx :attributes attributes}
-     {:label "Y" :param :ty :attributes attributes}
-     {:label "Z" :param :tz :attributes attributes}]))
+    {:label "Translation"
+     :sliders [{:label "X" :param :tx :attributes attributes}
+               {:label "Y" :param :ty :attributes attributes}
+               {:label "Z" :param :tz :attributes attributes}]}))
 
-(defonce scale-sliders
+(defonce scale
   (let [attributes {:min 1.0 :max 5.0 :step 0.25}]
-    [{:label "X" :param :sx :attributes attributes}
-     {:label "Y" :param :sy :attributes attributes}
-     {:label "Z" :param :sz :attributes attributes}]))
+    {:label "Scale"
+     :sliders [{:label "X" :param :sx :attributes attributes}
+               {:label "Y" :param :sy :attributes attributes}
+               {:label "Z" :param :sz :attributes attributes}]}))
 
-(defonce rotate-sliders
+(defonce rotate
   (let [attributes {:min 0 :max 359 :step 1}]
-    [{:label "X" :param :rx :attributes attributes}
-     {:label "Y" :param :ry :attributes attributes}
-     {:label "Z" :param :rz :attributes attributes}]))
+    {:label "Rotation"
+     :sliders [{:label "X" :param :rx :attributes attributes}
+               {:label "Y" :param :ry :attributes attributes}
+               {:label "Z" :param :rz :attributes attributes}]}))
 
-(defn ui-panel []
+(defn panel-component []
   [:div {:id "ui-panel"}
-    [draw-panel :key 1
-      {:label "Translation"
-       :sliders translate-sliders}]
-    [draw-panel :key 2
-      {:label "Rotation"
-       :sliders rotate-sliders}]
-    [draw-panel :key 3
-      {:label "Scaling"
-       :sliders scale-sliders}]])
+    [draw-panel translate]
+    [draw-panel rotate]
+    [draw-panel scale]])
 
 (defn on-js-reload [])
 
@@ -86,5 +78,5 @@
     [rx ry rz]
     [sx sy sz])
   (r/render
-    [ui-panel]
+    [panel-component]
     (. js/document (getElementById "app"))))
